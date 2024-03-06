@@ -36,6 +36,9 @@ productColor.forEach((button, index) => {
         productColor[0].classList.remove("product-color-active");
         productColor[1].classList.remove("product-color-active");
         productColor[2].classList.remove("product-color-active");
+        document.querySelectorAll(
+          ".product-img"
+        )[0].src = `./img/product-display/Hawthorne Acetate-${tmpColor}-1.jpg`;
         break;
       case 3:
       case 4:
@@ -44,6 +47,9 @@ productColor.forEach((button, index) => {
         productColor[3].classList.remove("product-color-active");
         productColor[4].classList.remove("product-color-active");
         productColor[5].classList.remove("product-color-active");
+        document.querySelectorAll(
+          ".product-img"
+        )[1].src = `./img/product-display/Canby ACTV-${tmpColor}-1.jpg`;
         break;
       case 6:
       case 7:
@@ -52,6 +58,9 @@ productColor.forEach((button, index) => {
         productColor[6].classList.remove("product-color-active");
         productColor[7].classList.remove("product-color-active");
         productColor[8].classList.remove("product-color-active");
+        document.querySelectorAll(
+          ".product-img"
+        )[2].src = `./img/product-display/Kennedy Acetate-${tmpColor}-1.jpg`;
         break;
     }
 
