@@ -5,7 +5,7 @@
   padding: 0;
 
   /* easier to check layout, disable when it's useless */
-  border: solid 1px black;
+  /* border: solid 1px black; */
 }
 
 /* Font family */
@@ -36,3 +36,101 @@ span {
 
 /* 2. Suggest class/id name = SectionName-xxxxx */
 /* for example: product-container */
+
+/* --- Product display --- */
+
+.product-display {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 60px;
+  margin: 50px auto;
+}
+
+.product-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 13px;
+  border-bottom: solid 1px #dfe0e1;
+}
+
+.product-button {
+  padding: 12px 21px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: solid 1px #dfe0e1;
+  color: #989898;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.product-title {
+  font-size: 32.3px;
+}
+
+.product-all {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.product-container {
+  width: 33.3%;
+  min-width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-img {
+  width: 100%;
+  margin-top: 70px;
+  cursor: pointer;
+}
+
+.product-color-container {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 12px;
+}
+
+.product-color-container img {
+  width: 32px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.product-color-active {
+  border: solid 4px white;
+  outline: solid 2px black;
+}
+
+.product-detail-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: solid 1px #dfe0e1;
+  padding-top: 10px;
+}
+
+.product-detail-container p {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.product-style {
+  width: 100%;
+  font-size: 16px;
+  color: #989898;
+  letter-spacing: 0.4px;
+  font-weight: 300;
+}
