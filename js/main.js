@@ -10,14 +10,10 @@
 
 /* Have Fun LOL */
 
-// Product mouseover trigger animation
-// 滑鼠滑上圖片，抓到product name & product color name，按照順序、每秒一張的要求播放幻燈片
-// 滑鼠離開後回歸原狀
-
 // Product color change
-// 點擊顏色抓到 color，改變 product/color name & actived color & 圖片
 const productColor = document.querySelectorAll(".product-color");
 let tmpColor;
+let tmpName;
 
 productColor.forEach((button, index) => {
   button.addEventListener("click", (e) => {
@@ -67,3 +63,41 @@ productColor.forEach((button, index) => {
     e.target.classList.add("product-color-active");
   });
 });
+
+// Product mouseover trigger animation
+let count = 0;
+let intervalTimer;
+const productImg = document.querySelectorAll(".product-img");
+
+for (let idx of productImg) {
+  idx.addEventListener("mouseover", (e) => {
+    tmpName = e.target.attributes.alt.value;
+    tmpColor = e.target.nextElementSibling.children;
+    count = 0;
+
+    function imgHandler() {
+      for (let color of tmpColor) {
+        if (color.classList.contains("product-color-active")) {
+          let activeColor = color.attributes.color.value;
+          console.log(count);
+          count += 1;
+          if (count <= 7) {
+            e.target.src = `./img/product-display/${tmpName}-${activeColor}-${count}.jpg`;
+          } else if (count > 7) {
+            e.target.src = `./img/product-display/${tmpName}-${activeColor}-1.jpg`;
+            clearInterval(intervalTimer);
+          }
+
+          idx.addEventListener("mouseleave", (e) => {
+            e.target.src = `./img/product-display/${tmpName}-${activeColor}-1.jpg`;
+            clearInterval(intervalTimer);
+          });
+        }
+      }
+    }
+
+    intervalTimer = setInterval(imgHandler, 1000);
+  });
+}
+
+// Product comparison
