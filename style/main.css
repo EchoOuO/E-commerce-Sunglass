@@ -2,9 +2,7 @@
 
 @media (max-width: 600px) {
   body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    margin: .5px;
     height: auto;
   }
   
@@ -12,17 +10,12 @@
     font-size: 1rem;
     font-family: "Ubuntu", sans-serif;
     scroll-behavior: smooth;
-    --link-color-normal: #ffffff;
-    --link-color-active: orange;
-    --link-color-hover: red;
   }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
   body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    margin: .5px;
     height: auto;
   }
   
@@ -30,17 +23,12 @@
     font-size: 1rem;
     font-family: "Ubuntu", sans-serif;
     scroll-behavior: smooth;
-    --link-color-normal: #ffffff;
-    --link-color-active: orange;
-    --link-color-hover: red;
   }
 }
 
 @media (min-width: 901px) {
   body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    margin: .5px;
     height: auto;
   }
   
@@ -48,8 +36,5 @@
     font-size: 1rem;
     font-family: "Ubuntu", sans-serif;
     scroll-behavior: smooth;
-    --link-color-normal: #ffffff;
-    --link-color-active: orange;
-    --link-color-hover: red;
   }
 }

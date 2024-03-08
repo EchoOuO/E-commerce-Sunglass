@@ -4,9 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style/nav.css">
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/searchbtn.js"></script>
   <title>Document</title>
 </head>
 <body>
+  <nav class="nav-bar">
+    <div class="nav-bar-div-left">
+      <img src="./icon/logo.png" alt="Logo" id="nav-bar-logo">
+      <img src="./icon/arrow-right.png" alt="" id="nav-arrow-right">
+    </div>
+    <div class="nav-bar-div-mid">
+      <ul class="nav-bar-ul">
+        <li><a href="#">MEN</a></li>
+        <li><a href="#">WOMEN</a></li>
+        <li><a href="#">COLLECTIONS</a></li>
+        <li><a href="#">EXPLORE</a></li>
+      </ul>
+    </div>
+    <div class="nav-bar-div-right">
+      <div class="icons-group">
+        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></a>
+        <a href="#" id="bfr-img"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></a>
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></a>
+      </div>
+    </div>
+  </nav>
   
 </body>
+<script>
+  const btn = $(".icons-group button");
+  btn.eq(0).click((e)=> {
+    e.preventDefault();
+    $(".icons-group input").toggle(500);
+    btn.toggleClass("idx1");
+    $("#bfr-img").toggleClass("bfr-img");
+    btn.click(()=> {
+      location.reload();
+      // find the form and make the submit
+    })
+    console.log("click");
+  })
+</script>
 </html>
