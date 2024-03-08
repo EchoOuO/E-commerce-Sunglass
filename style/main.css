@@ -1,38 +1,55 @@
-/* Global */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 
-  /* easier to check layout, disable when it's useless */
-  border: solid 1px black;
+
+@media (max-width: 600px) {
+  body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  html {
+    font-size: 1rem;
+    font-family: "Ubuntu", sans-serif;
+    scroll-behavior: smooth;
+    --link-color-normal: #ffffff;
+    --link-color-active: orange;
+    --link-color-hover: red;
+  }
 }
 
-/* Font family */
-.vollkorn-title-text,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Vollkorn", serif;
-  font-weight: 700;
+@media (min-width: 601px) and (max-width: 900px) {
+  body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  html {
+    font-size: 1rem;
+    font-family: "Ubuntu", sans-serif;
+    scroll-behavior: smooth;
+    --link-color-normal: #ffffff;
+    --link-color-active: orange;
+    --link-color-hover: red;
+  }
 }
 
-.karla-content-text,
-p,
-a,
-span {
-  font-family: "Karla", sans-serif;
-  font-weight: 500;
+@media (min-width: 901px) {
+  body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  html {
+    font-size: 1rem;
+    font-family: "Ubuntu", sans-serif;
+    scroll-behavior: smooth;
+    --link-color-normal: #ffffff;
+    --link-color-active: orange;
+    --link-color-hover: red;
+  }
 }
-
-/* 1. Please divide codes of sections by */
-/* --- section naming --- */
-/* for example */
-/* --- product display --- */
-/* for readable codes */
-
-/* 2. Suggest class/id name = SectionName-xxxxx */
-/* for example: product-container */
