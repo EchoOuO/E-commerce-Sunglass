@@ -15,6 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+      integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
 
   <!-- 1. Please divide codes by -->
@@ -25,19 +31,119 @@
 
   <body>
     <main>
-      <!-- header START -->
-      <header>
-        <nav></nav>
-      </header>
+      <section class="comparison-table">
+        <div class="table-filter"></div>
+        <div class="comparison-table-container">
+          <button class="comparison-close-button">&#10005;</button>
+          <table class="product-table">
+            <tr>
+              <th></th>
+              <th><p class="table-product-name">text</p></th>
+              <th><p class="table-product-name">text</p></th>
+              <th><p class="table-product-name">text</p></th>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">UV Protection</p>
+              </td>
+              <td>
+                <p>UVA/UVB</p>
+                <p class="table-product-text">text</p>
+              </td>
+              <td>
+                <p>UVA/UVB</p>
+                <p class="table-product-text">text</p>
+              </td>
+              <td>
+                <p>UVA/UVB</p>
+                <p class="table-product-text">text</p>
+              </td>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">Material</p>
+                <p>(Wood / Metal / Acetate)</p>
+              </td>
+              <td class="material-td">
+                <div class="material-div-container">
+                  <p>Frame</p>
+                  <p>Lens</p>
+                  <img src="" alt="" class="material-img" />
+                  <p class="table-product-text">text</p>
+                </div>
+              </td>
+              <td class="material-td">
+                <div class="material-div-container">
+                  <p>Frame</p>
+                  <p>Lens</p>
+                  <img src="" alt="" class="material-img" />
+                  <p class="table-product-text">text</p>
+                </div>
+              </td>
+              <td class="material-td">
+                <div class="material-div-container">
+                  <p>Frame</p>
+                  <p>Lens</p>
+                  <img src="" alt="" class="material-img" />
+                  <p class="table-product-text">text</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">Weight</p>
+              </td>
+              <td><p class="table-product-text">text</p></td>
+              <td><p class="table-product-text">text</p></td>
+              <td><p class="table-product-text">text</p></td>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">Review</p>
+              </td>
+              <td><p class="table-product-text">text</p></td>
+              <td><p class="table-product-text">text</p></td>
+              <td><p class="table-product-text">text</p></td>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">Price</p>
+              </td>
+              <td><p class="table-product-text">text</p></td>
+              <td><p class="table-product-text">text</p></td>
+              <td><p class="table-product-text">text</p></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a class="table-cart-button" href="">Choose Me</a></td>
+              <td><a class="table-cart-button" href="">Choose Me</a></td>
+              <td><a class="table-cart-button" href="">Choose Me</a></td>
+            </tr>
+          </table>
+        </div>
+      </section>
 
       <!-- "section name" START -->
       <section class="product-display">
         <div class="product-title-container">
           <h2 class="product-title">Shop Best Sellers</h2>
-          <a class="product-button" href="">Shop All</a>
+          <div class="product-button-container">
+            <a class="product-compare-button">Compare Product</a>
+            <a
+              class="product-shop-button"
+              href="https://shwoodshop.com/collections/best-selling-sunglasses-all"
+              target="_blank"
+              >Shop All</a
+            >
+          </div>
         </div>
         <div class="product-all">
           <div class="product-container">
+            <div class="product-comparison-container">
+              <input class="product-comparison" type="checkbox" />
+              <p>Choose to Compare</p>
+            </div>
+
             <img
               class="product-img"
               src="./img/product-display/Hawthorne Acetate-Black Chrome-1.jpg"
@@ -71,6 +177,10 @@
           </div>
 
           <div class="product-container">
+            <div class="product-comparison-container">
+              <input class="product-comparison" type="checkbox" />
+              <p>Choose to Compare</p>
+            </div>
             <img
               class="product-img"
               src="./img/product-display/Canby ACTV-Emerald-1.jpg"
@@ -104,6 +214,10 @@
           </div>
 
           <div class="product-container">
+            <div class="product-comparison-container">
+              <input class="product-comparison" type="checkbox" />
+              <p>Choose to Compare</p>
+            </div>
             <img
               class="product-img"
               src="./img/product-display/Kennedy Acetate-Matte Black-1.jpg"
@@ -137,24 +251,10 @@
           </div>
         </div>
       </section>
-
-      <!-- "section name" START -->
-      <section></section>
-
-      <!-- "section name" START -->
-      <section></section>
-
-      <!-- "section name" START -->
-      <section></section>
-
-      <!-- "section name" START -->
-      <section></section>
-
-      <!-- footer START -->
-      <footer></footer>
     </main>
   </body>
 
   <!-- Please use external JS, ./js/main.js -->
+
   <script src="./js/main.js"></script>
 </html>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1001,
+    "Name": "Hawthome Acetate",
+    "Color": "Black Chrome, Tortoise, Blue Coral",
+    "Img": "/img/product-display/Hawthome Acetate-Black Chrome-1.jpg",
+    "Price": 199,
+    "Weight": 50,
+    "Fmaterial": "Wood, Metal, Acetate",
+    "Lmaterial": "CR39",
+    "Review": 4.9,
+    "ReviewN": 45
+  },
+  {
+    "id": 1002,
+    "Name": "Canby ACTV",
+    "Color": "Emerald, Matte Apricot, Oak Moss",
+    "Img": "/img/product-display/Canby ACTV-Emerald-1.jpg",
+    "Price": 149,
+    "Weight": 65,
+    "Fmaterial": "Wood, Acetate",
+    "Lmaterial": "CR39",
+    "Review": 4.76,
+    "ReviewN": 33
+  },
+  {
+    "id": 1003,
+    "Name": "Kennedy Acetate",
+    "Color": "Matte Black, Tangerine, Matte Havana",
+    "Img": "/img/product-display/Kennedy Acetate-Matte Black-1.jpg",
+    "Price": 199,
+    "Weight": 60,
+    "Fmaterial": "Acetate",
+    "Lmaterial": "CR39",
+    "Review": 4.86,
+    "ReviewN": 7
+  }
+]

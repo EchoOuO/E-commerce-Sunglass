@@ -74,12 +74,13 @@ for (let idx of productImg) {
     tmpName = e.target.attributes.alt.value;
     tmpColor = e.target.nextElementSibling.children;
     count = 0;
+    clearInterval(intervalTimer);
 
     function imgHandler() {
       for (let color of tmpColor) {
         if (color.classList.contains("product-color-active")) {
           let activeColor = color.attributes.color.value;
-          console.log(count);
+
           count += 1;
           if (count <= 7) {
             e.target.src = `./img/product-display/${tmpName}-${activeColor}-${count}.jpg`;
@@ -90,14 +91,47 @@ for (let idx of productImg) {
 
           idx.addEventListener("mouseleave", (e) => {
             e.target.src = `./img/product-display/${tmpName}-${activeColor}-1.jpg`;
-            clearInterval(intervalTimer);
           });
         }
       }
     }
 
     intervalTimer = setInterval(imgHandler, 1000);
+
+    // avoid bug: mouseover less than 1 sec (didn't trigger function imgHandler)
+    idx.addEventListener("mouseleave", (e) => {
+      clearInterval(intervalTimer);
+    });
   });
 }
+
+// open/close table (fade in/out)
+function openTable(e) {
+  $(".comparison-table").fadeIn();
+  $(".comparison-table").css("display", "flex");
+}
+
+$(".product-compare-button").click(() => {
+  openTable();
+});
+
+function closeTable(e) {
+  $(".comparison-table").fadeOut(100);
+}
+
+$(".table-filter").click(() => {
+  closeTable();
+});
+
+$(".comparison-close-button").click(() => {
+  closeTable();
+});
+
+// press esc to close modal box+
+$(document).on("keydown", (e) => {
+  if (e.keyCode == 27) {
+    closeTable();
+  }
+});
 
 // Product comparison

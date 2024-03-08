@@ -8,6 +8,17 @@
   /* border: solid 1px black; */
 }
 
+html,
+body,
+main {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  position: relative;
+}
+
 /* Font family */
 .vollkorn-title-text,
 h1,
@@ -54,7 +65,14 @@ span {
   border-bottom: solid 1px #dfe0e1;
 }
 
-.product-button {
+.product-button-container {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.product-compare-button,
+.product-shop-button {
   padding: 12px 21px;
   min-width: 100px;
   display: flex;
@@ -68,6 +86,12 @@ span {
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.product-compare-button:hover,
+.product-shop-button:hover {
+  background-color: #c8a846;
+  color: white;
 }
 
 .product-title {
@@ -92,7 +116,7 @@ span {
 
 .product-img {
   width: 100%;
-  margin-top: 70px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -133,4 +157,145 @@ span {
   color: #989898;
   letter-spacing: 0.4px;
   font-weight: 300;
+}
+
+.product-comparison-container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+  justify-content: flex-end;
+}
+
+/* --- Product comparison --- */
+
+.table-hidden {
+  display: none;
+}
+
+.comparison-table {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  /* 這東西好像也有bug，位置會跑XDD */
+  backdrop-filter: blur(2px);
+}
+
+.table-filter {
+  background-color: rgba(220, 220, 220, 0.5);
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.comparison-table-container {
+  /* 如何實現由內部元素撐開母元素寬度?? */
+  width: 80%;
+  height: 90vh;
+  border-radius: 1rem;
+  padding: 50px;
+  background-color: #fff;
+  position: relative;
+  border: solid 1px gray;
+  box-shadow: 5px 5px 15px gray;
+  z-index: 3;
+}
+
+.comparison-close-button {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  border: solid 1px #b1b1b1;
+  border-radius: 100%;
+  padding: 5px;
+  width: 31px;
+  /* height: 25px; */
+  text-decoration: none;
+  text-align: center;
+  background-color: #fff;
+  color: #b1b1b1;
+  cursor: pointer;
+}
+
+.comparison-close-button:hover {
+  background-color: #c8a846;
+  color: white;
+}
+
+.product-table {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.product-table th:first-child,
+.product-table td:first-child {
+  width: 200px;
+}
+
+.product-table th:not(th:first-child),
+.product-table td:not(td:first-child) {
+  width: fit-content;
+  /* 可以定義最小寬度?? */
+}
+
+.product-table tr:first-child {
+  height: 100px;
+}
+.product-table tr:not(tr:first-child) {
+  height: 50px;
+}
+
+.colored-table {
+  background-color: #dfe0e1;
+}
+
+.table-product-feature {
+  font-size: 20px;
+}
+
+.table-product-name {
+  font-size: 20px;
+}
+
+.table-product-text {
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-div-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.4fr 1.5fr;
+  height: 100%;
+  width: 100%;
+}
+
+.material-td div {
+  /* display: inline-block; */
+  text-align: center;
+}
+
+.table-cart-button {
+  text-decoration: none;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #dfe0e1;
+}
+
+.table-cart-button:hover {
+  background-color: #c8a846;
+  color: white;
 }
