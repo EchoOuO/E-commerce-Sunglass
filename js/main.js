@@ -21,7 +21,7 @@ productColor.forEach((button, index) => {
     // console.log(e.target.attributes.color.value);
     // console.log(index);
     tmpColor = e.target.attributes.color.value;
-    tmpName = e.target.parentElement.previousElementSibling;
+    tmpName = e.target.parentElement.previousElementSibling.alt;
     // console.log(tmpColor);
 
     // index = number, not string
@@ -35,7 +35,7 @@ productColor.forEach((button, index) => {
         productColor[2].classList.remove("product-color-active");
         document.querySelectorAll(
           ".product-img"
-        )[0].src = `./img/product-display/Hawthorne Acetate-${tmpColor}-1.jpg`;
+        )[0].src = `./img/product-display/${tmpName}-${tmpColor}-1.jpg`;
         break;
       case 3:
       case 4:
@@ -46,7 +46,7 @@ productColor.forEach((button, index) => {
         productColor[5].classList.remove("product-color-active");
         document.querySelectorAll(
           ".product-img"
-        )[1].src = `./img/product-display/Canby ACTV-${tmpColor}-1.jpg`;
+        )[1].src = `./img/product-display/${tmpName}-${tmpColor}-1.jpg`;
         break;
       case 6:
       case 7:
@@ -57,11 +57,12 @@ productColor.forEach((button, index) => {
         productColor[8].classList.remove("product-color-active");
         document.querySelectorAll(
           ".product-img"
-        )[2].src = `./img/product-display/Kennedy Acetate-${tmpColor}-1.jpg`;
+        )[2].src = `./img/product-display/${tmpName}-${tmpColor}-1.jpg`;
         break;
     }
 
     console.log(index);
+    console.log($(".product-img"));
 
     e.target.classList.add("product-color-active");
   });
@@ -230,7 +231,7 @@ function tableHandler() {
       $(".table-product-name").eq(index).text(product.Name);
       $(".table-UV-text").eq(index).text(product.UV);
       $(".table-l-material-text").eq(index).text(product.Lmaterial);
-      $(".table-weitght-text").eq(index).text(product.Weight);
+      $(".table-weight-text").eq(index).text(product.Weight);
       $(".table-review-text").eq(index).text(product.Review);
       $(".table-price-text").eq(index).text(product.Price);
 
