@@ -21,6 +21,7 @@ productColor.forEach((button, index) => {
     // console.log(e.target.attributes.color.value);
     // console.log(index);
     tmpColor = e.target.attributes.color.value;
+    tmpName = e.target.parentElement.previousElementSibling;
     // console.log(tmpColor);
 
     // index = number, not string
@@ -59,6 +60,8 @@ productColor.forEach((button, index) => {
         )[2].src = `./img/product-display/Kennedy Acetate-${tmpColor}-1.jpg`;
         break;
     }
+
+    console.log(index);
 
     e.target.classList.add("product-color-active");
   });
@@ -128,6 +131,7 @@ function openTable(e) {
 
 $(".product-compare-button").click(() => {
   openTable();
+  tableHandler();
 });
 
 function closeTable(e) {
@@ -173,4 +177,64 @@ $(".product-comparison-checkbox").click((e) => {
   }
 });
 
-// Product comparison
+// Get product data from JSON
+const productList = new Map();
+const comparisonList = new Map();
+
+const load = () => {
+  const xHttp = new XMLHttpRequest();
+  xHttp.onload = function () {
+    let tmpData = JSON.parse(xHttp.responseText);
+    for (let data of tmpData) {
+      productList.set(data.pid, data);
+    }
+    // console.log(productList);
+  };
+  xHttp.open("get", "./js/data.json");
+  xHttp.send();
+};
+load();
+
+// the index can't be changed , otherwise will get wrong data
+document
+  .querySelectorAll(".product-comparison-text")
+  .forEach((checkbox, index) => {
+    $(".product-comparison-checkbox")
+      .eq(index)
+      .click((e) => {
+        let pid = index + 1001;
+        let tmpData = productList.get(pid);
+
+        if (e.target.checked) {
+          comparisonList.set(pid, tmpData);
+          // console.log(comparisonList);
+        } else {
+          comparisonList.delete(pid);
+          // console.log(comparisonList);
+        }
+      });
+  });
+
+function tableHandler() {
+  let index = 0;
+
+  $(".table-product-name").text("");
+
+  for (let product of comparisonList.values()) {
+    if (index < $(".table-product-name").length) {
+      // let activeColor = $("");
+
+      // $(".product-img").eq(
+      //   index
+      // ).src = `./img/product-display/${product.Name}-${activeColor}--1.jpg`;
+      $(".table-product-name").eq(index).text(product.Name);
+      $(".table-UV-text").eq(index).text(product.UV);
+      $(".table-l-material-text").eq(index).text(product.Lmaterial);
+      $(".table-weitght-text").eq(index).text(product.Weight);
+      $(".table-review-text").eq(index).text(product.Review);
+      $(".table-price-text").eq(index).text(product.Price);
+
+      index++;
+    }
+  }
+}
