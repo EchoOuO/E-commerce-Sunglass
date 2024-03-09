@@ -82,9 +82,11 @@ for (let idx of productImg) {
           let activeColor = color.attributes.color.value;
 
           count += 1;
-          if (count <= 7) {
-            e.target.src = `./img/product-display/${tmpName}-${activeColor}-${count}.jpg`;
-          } else if (count > 7) {
+          if (Math.floor(count) <= 7) {
+            e.target.src = `./img/product-display/${tmpName}-${activeColor}-${Math.floor(
+              count
+            )}.jpg`;
+          } else if (Math.floor(count) > 7) {
             e.target.src = `./img/product-display/${tmpName}-${activeColor}-1.jpg`;
             clearInterval(intervalTimer);
           }
@@ -96,7 +98,7 @@ for (let idx of productImg) {
       }
     }
 
-    intervalTimer = setInterval(imgHandler, 1000);
+    intervalTimer = setInterval(imgHandler, 800);
 
     // avoid bug: mouseover less than 1 sec (didn't trigger function imgHandler)
     idx.addEventListener("mouseleave", (e) => {
@@ -107,8 +109,21 @@ for (let idx of productImg) {
 
 // open/close table (fade in/out)
 function openTable(e) {
-  $(".comparison-table").fadeIn();
-  $(".comparison-table").css("display", "flex");
+  if ($(".checked").length > 1) {
+    $(".comparison-table").fadeIn();
+    $(".comparison-table").css("display", "flex");
+  } else {
+    alert("Please choose at lease 2 products");
+    $(".product-comparison-text").css({
+      transition: "0.5s ease-in-out",
+      color: "red",
+    });
+    setTimeout(() => {
+      $(".product-comparison-text").css({
+        color: "",
+      });
+    }, 1500);
+  }
 }
 
 $(".product-compare-button").click(() => {
@@ -131,6 +146,30 @@ $(".comparison-close-button").click(() => {
 $(document).on("keydown", (e) => {
   if (e.keyCode == 27) {
     closeTable();
+  }
+});
+
+// checkbox & comapre button
+$(".product-comparison-checkbox").click((e) => {
+  if (e.target.checked) {
+    $(e.target).addClass("checked");
+  } else {
+    $(e.target).removeClass("checked");
+  }
+
+  if (
+    $(".product-comparison-checkbox").hasClass("checked") &&
+    $(".checked").length > 1
+  ) {
+    $(".product-compare-button").addClass("product-compare-button-active");
+  } else {
+    $(".product-compare-button").removeClass("product-compare-button-active");
+  }
+
+  if ($(".checked").length > 3) {
+    alert("Only 3 products allowed in maximum");
+    console.log(e.target.checked);
+    e.target.checked = false;
   }
 });
 
