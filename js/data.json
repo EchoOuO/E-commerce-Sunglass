@@ -1,7 +1,7 @@
 [
   {
     "pid": 1001,
-    "Name": "Hawthome Acetate",
+    "Name": "Hawthorne Acetate",
     "Color": ["Black Chrome", "Tortoise", "Blue Coral"],
     "Img": "/img/product-display/Hawthome Acetate-Black Chrome-1.jpg",
     "UV": "100%",
@@ -10,12 +10,13 @@
     "Fmaterial": ["Wood", "Metal", "Acetat"],
     "Lmaterial": "CR39",
     "Review": 4.9,
-    "ReviewN": 45
+    "ReviewN": 45,
+    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/hawthorne-acetate?variant=55482917191"
   },
   {
     "pid": 1002,
     "Name": "Canby ACTV",
-    "Color": ["Merald", "Matte Apricot", "Oak Moss"],
+    "Color": ["Emerald", "Matte Apricot", "Oak Moss"],
     "Img": "/img/product-display/Canby ACTV-Emerald-1.jpg",
     "UV": "100%",
     "Price": "$149",
@@ -23,7 +24,8 @@
     "Fmaterial": ["Wood", "Acetate"],
     "Lmaterial": "CR39",
     "Review": 4.76,
-    "ReviewN": 33
+    "ReviewN": 33,
+    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/canby-actv-sunglasses-1?variant=46307944268009"
   },
   {
     "pid": 1003,
@@ -36,6 +38,7 @@
     "Fmaterial": ["Acetate"],
     "Lmaterial": "CR39",
     "Review": 4.86,
-    "ReviewN": 7
+    "ReviewN": 7,
+    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/kennedy-acetate-sunglasses-1?variant=44931794829545"
   }
 ]

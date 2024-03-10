@@ -10,6 +10,48 @@
 
 /* Have Fun LOL */
 
+// Get product data from JSON
+const productList = new Map();
+const comparisonList = new Map();
+
+const load = () => {
+  const xHttp = new XMLHttpRequest();
+  xHttp.onload = function () {
+    let tmpData = JSON.parse(xHttp.responseText);
+    for (let data of tmpData) {
+      productList.set(data.pid, data);
+    }
+
+    let index;
+
+    // Dynamically update the products
+    for (let product of productList.values()) {
+      let pid = product.pid;
+      index = pid - 1001;
+      const productName = $("<p></p>");
+      const productPrice = $("<p></p>");
+      const productColor = $("<p></p>");
+
+      productName.text(product.Name);
+      productName.addClass("product-name");
+      $(".product-detail-container").eq(index).append(productName);
+
+      productPrice.text(product.Price);
+      productPrice.addClass("product-price");
+      $(".product-detail-container").eq(index).append(productPrice);
+
+      productColor.text(product.Color[0]);
+      productColor.addClass("product-style");
+      $(".product-container").after().eq(index).append(productColor);
+
+      index++;
+    }
+  };
+  xHttp.open("get", "./js/data.json");
+  xHttp.send();
+};
+load();
+
 // Product color change
 const productColor = document.querySelectorAll(".product-color");
 let tmpColor;
@@ -17,12 +59,10 @@ let tmpName;
 
 productColor.forEach((button, index) => {
   button.addEventListener("click", (e) => {
-    // console.log(e);
-    // console.log(e.target.attributes.color.value);
-    // console.log(index);
     tmpColor = e.target.attributes.color.value;
     tmpName = e.target.parentElement.previousElementSibling.alt;
-    // console.log(tmpColor);
+
+    console.log(index);
 
     // index = number, not string
     switch (index) {
@@ -60,9 +100,6 @@ productColor.forEach((button, index) => {
         )[2].src = `./img/product-display/${tmpName}-${tmpColor}-1.jpg`;
         break;
     }
-
-    console.log(index);
-    console.log($(".product-img"));
 
     e.target.classList.add("product-color-active");
   });
@@ -173,28 +210,9 @@ $(".product-comparison-checkbox").click((e) => {
 
   if ($(".checked").length > 3) {
     alert("Only 3 products allowed in maximum");
-    console.log(e.target.checked);
     e.target.checked = false;
   }
 });
-
-// Get product data from JSON
-const productList = new Map();
-const comparisonList = new Map();
-
-const load = () => {
-  const xHttp = new XMLHttpRequest();
-  xHttp.onload = function () {
-    let tmpData = JSON.parse(xHttp.responseText);
-    for (let data of tmpData) {
-      productList.set(data.pid, data);
-    }
-    // console.log(productList);
-  };
-  xHttp.open("get", "./js/data.json");
-  xHttp.send();
-};
-load();
 
 // the index can't be changed , otherwise will get wrong data
 document
@@ -208,10 +226,8 @@ document
 
         if (e.target.checked) {
           comparisonList.set(pid, tmpData);
-          // console.log(comparisonList);
         } else {
           comparisonList.delete(pid);
-          // console.log(comparisonList);
         }
       });
   });
@@ -219,23 +235,54 @@ document
 function tableHandler() {
   let index = 0;
 
-  $(".table-product-name").text("");
+  tableInit();
 
   for (let product of comparisonList.values()) {
-    if (index < $(".table-product-name").length) {
-      // let activeColor = $("");
+    $(".table-product-img")
+      .eq(index)
+      .attr(
+        "src",
+        `./img/product-display/${product.Name}-${product.Color[0]}-1.jpg`
+      );
 
-      // $(".product-img").eq(
-      //   index
-      // ).src = `./img/product-display/${product.Name}-${activeColor}--1.jpg`;
-      $(".table-product-name").eq(index).text(product.Name);
-      $(".table-UV-text").eq(index).text(product.UV);
-      $(".table-l-material-text").eq(index).text(product.Lmaterial);
-      $(".table-weight-text").eq(index).text(product.Weight);
-      $(".table-review-text").eq(index).text(product.Review);
-      $(".table-price-text").eq(index).text(product.Price);
+    $(".table-product-name").eq(index).text(product.Name);
+    $(".table-UV-text").eq(index).text(product.UV);
+    $(".table-l-material-text").eq(index).text(product.Lmaterial);
+    $(".table-weight-text").eq(index).text(product.Weight);
+    $(".table-review-text").eq(index).text(product.Review);
+    $(".table-price-text").eq(index).text(product.Price);
+    $(".table-cart-anchor").eq(index).attr("href", product.Url);
 
-      index++;
+    for (let i = 0; i < product.Color.length; i++) {
+      const color = $("<img></img>");
+      color.attr("src", `./icon/color-${product.Name}-${product.Color[i]}.png`);
+      color.addClass("table-product-color");
+      $(".table-product-color-container").eq(index).append(color);
     }
+
+    index++;
   }
+
+  console.log(comparisonList.size);
+
+  if (comparisonList.size < 3) {
+    $(".table-cart-button").eq(2).attr("disabled", "disabled");
+    $(".table-cart-button").eq(2).css("cursor", "not-allowed");
+    $(".table-cart-button").eq(2).css("display", "none");
+  } else {
+    $(".table-cart-button").eq(2).removeAttr("disabled");
+    $(".table-cart-button").eq(2).css("cursor", "pointer");
+    $(".table-cart-button").eq(2).css("display", "");
+  }
+}
+
+function tableInit() {
+  $(".table-product-img").attr("src", ``);
+  $(".table-product-name").text("");
+  $(".table-product-color-container").text("");
+  $(".table-UV-text").text("");
+  $(".table-l-material-text").text("");
+  $(".table-weight-text").text("");
+  $(".table-review-text").text("");
+  $(".table-price-text").text("");
 }

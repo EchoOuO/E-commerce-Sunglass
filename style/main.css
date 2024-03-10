@@ -5,7 +5,7 @@
   padding: 0;
 
   /* easier to check layout, disable when it's useless */
-  border: solid 1px black;
+  /* border: solid 1px black; */
 }
 
 html,
@@ -34,7 +34,8 @@ h6 {
 .karla-content-text,
 p,
 a,
-span {
+span,
+button {
   font-family: "Karla", sans-serif;
   font-weight: 500;
 }
@@ -253,6 +254,9 @@ span {
 .product-table td:not(td:first-child) {
   width: fit-content;
   /* 可以定義最小寬度?? */
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .product-table tr:first-child {
@@ -261,21 +265,32 @@ span {
 .product-table tr:not(tr:first-child) {
   height: 50px;
 }
+.product-table tr:not(tr:first-child):not(tr:last-child) {
+  border: solid 1px gray;
+}
 
 .colored-table {
-  background-color: #dfe0e1;
+  background-color: #e6c7988a;
 }
 
 .table-product-feature {
   font-size: 20px;
 }
 
+.feature-div-container {
+  display: grid;
+  grid-template-rows: 0.4fr 1fr;
+  height: 100%;
+  width: 100%;
+}
+
 .table-product-name {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .table-product-text {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   display: flex;
   justify-content: center;
@@ -295,15 +310,45 @@ span {
   text-align: center;
 }
 
+.table-cart-anchor {
+  width: 100%;
+}
+
 .table-cart-button {
   text-decoration: none;
   color: black;
   padding: 5px 15px;
   border-radius: 20px;
   background-color: #dfe0e1;
+  border: none;
+  cursor: pointer;
 }
 
 .table-cart-button:hover {
   background-color: #c8a846;
   color: white;
+}
+
+.table-product-color-container {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.table-product-color-container img {
+  width: 12%;
+  min-width: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.table-product-color-active {
+  border: solid 4px white;
+  outline: solid 2px black;
+}
+
+.table-product-img {
+  width: 100%;
+  min-width: 200px;
 }
