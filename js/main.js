@@ -62,44 +62,16 @@ productColor.forEach((button, index) => {
     tmpColor = e.target.attributes.color.value;
     tmpName = e.target.parentElement.previousElementSibling.alt;
 
-    console.log(index);
+    $(e.target.parentElement.children).removeClass("product-color-active");
+    $(e.target).addClass("product-color-active");
 
-    // index = number, not string
-    switch (index) {
-      case 0:
-      case 1:
-      case 2:
-        document.querySelectorAll(".product-style")[0].innerHTML = tmpColor;
-        productColor[0].classList.remove("product-color-active");
-        productColor[1].classList.remove("product-color-active");
-        productColor[2].classList.remove("product-color-active");
-        document.querySelectorAll(
-          ".product-img"
-        )[0].src = `./img/product-display/${tmpName}-${tmpColor}-1.jpg`;
-        break;
-      case 3:
-      case 4:
-      case 5:
-        document.querySelectorAll(".product-style")[1].innerHTML = tmpColor;
-        productColor[3].classList.remove("product-color-active");
-        productColor[4].classList.remove("product-color-active");
-        productColor[5].classList.remove("product-color-active");
-        document.querySelectorAll(
-          ".product-img"
-        )[1].src = `./img/product-display/${tmpName}-${tmpColor}-1.jpg`;
-        break;
-      case 6:
-      case 7:
-      case 8:
-        document.querySelectorAll(".product-style")[2].innerHTML = tmpColor;
-        productColor[6].classList.remove("product-color-active");
-        productColor[7].classList.remove("product-color-active");
-        productColor[8].classList.remove("product-color-active");
-        document.querySelectorAll(
-          ".product-img"
-        )[2].src = `./img/product-display/${tmpName}-${tmpColor}-1.jpg`;
-        break;
-    }
+    $(e.target.parentElement.nextElementSibling.nextElementSibling).text(
+      tmpColor
+    );
+    $(e.target.parentElement.previousElementSibling).attr(
+      "src",
+      `./img/product-display/${tmpName}-${tmpColor}-1.jpg`
+    );
 
     e.target.classList.add("product-color-active");
   });
@@ -254,17 +226,68 @@ function tableHandler() {
     $(".table-cart-anchor").eq(index).attr("href", product.Url);
 
     for (let i = 0; i < product.Color.length; i++) {
+      // console.log(
+      //   $(".product-container").find(".product-color-active").attr("color")
+      // );
+
       const color = $("<img></img>");
+      let activeColor;
+      activeColor = $(".product-container")
+        .find(".product-color-active")
+        .eq(index)
+        .attr("color");
+
+      console.log(product.Color[i]);
+      console.log(activeColor);
+      console.log("---------");
+
+      // bugs!!!!!!!!!!!
+      // 只有當 productList 內的順序 跟 外面的順序是一樣的時候才能動
+      // 例如 外面是 1 2 3，而productList 是 2 1 3 則 全部失敗、1 2 3 全部成功、2 1 3 則 3 成功
+      if (
+        product.Color[i] == activeColor &&
+        $(".product-comparison-checkbox").hasClass("checked")
+      ) {
+        color.addClass("table-product-color-active");
+      }
+
       color.attr("src", `./icon/color-${product.Name}-${product.Color[i]}.png`);
+      color.attr("alt", `${product.Color[i]}`);
       color.addClass("table-product-color");
+
       $(".table-product-color-container").eq(index).append(color);
     }
+
+    for (let j = 0; j < product.Fmaterial.length; j++) {
+      const frameMateiral = $("<img></img>");
+      frameMateiral.attr("src", `./img/${product.Fmaterial[j]}.png`);
+      frameMateiral.addClass(".table-f-material-img");
+      $(".table-f-material-img-container").eq(index).append(frameMateiral);
+    }
+    // color.first().addClass("table-product-color-active");
 
     index++;
   }
 
-  console.log(comparisonList.size);
+  // Table product color change
+  $(".table-product-color").click((e) => {
+    $(e.target.parentElement.children).removeClass(
+      "table-product-color-active"
+    );
+    $(e.target).addClass("table-product-color-active");
 
+    tmpName = e.target.parentElement.nextElementSibling.innerText;
+    tmpColor = $(e.target.parentElement)
+      .find(".table-product-color-active")
+      .attr("alt");
+
+    $(e.target.parentElement.previousElementSibling).attr(
+      "src",
+      `./img/product-display/${tmpName}-${tmpColor}-1.jpg`
+    );
+  });
+
+  // disable 3rd column in table
   if (comparisonList.size < 3) {
     $(".table-cart-button").eq(2).attr("disabled", "disabled");
     $(".table-cart-button").eq(2).css("cursor", "not-allowed");
@@ -278,6 +301,7 @@ function tableHandler() {
 
 function tableInit() {
   $(".table-product-img").attr("src", ``);
+  $(".table-f-material-img-container").text("");
   $(".table-product-name").text("");
   $(".table-product-color-container").text("");
   $(".table-UV-text").text("");
