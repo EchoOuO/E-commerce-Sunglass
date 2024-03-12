@@ -310,3 +310,145 @@ function tableInit() {
   $(".table-review-text").text("");
   $(".table-price-text").text("");
 }
+
+// Product Quick View
+
+// product slideshow
+const mySlides = $(".mySlides");
+const next = $(".next");
+const previous = $(".previous");
+
+let index = 0;
+
+function init() {
+  mySlides.eq(0).css("display", "block");
+  imgHandler(0);
+
+  // doesn't work!!!!!!!!!!1
+  for (let i = 0; i < mySlides.length; i++) {
+    const div = $("<div></div>");
+    let dot = div.addClass("dot");
+    $(".slidesDots").append(dot);
+  }
+
+  $(".dot").eq(0).addClass("active");
+}
+init();
+
+next.click(() => {
+  if (index < mySlides.length - 1) {
+    index++;
+  } else if (index == mySlides.length - 1) {
+    index = 0;
+  }
+  imgHandler(index);
+  dotHandler(index);
+});
+
+previous.click(() => {
+  if (index > -mySlides.length + 1) {
+    index--;
+  } else if (index == -mySlides.length + 1) {
+    index = 0;
+  }
+  imgHandler(index);
+  dotHandler(index);
+});
+
+function imgHandler(idx) {
+  mySlides.css("display", "none");
+  mySlides.eq(idx).fadeIn();
+}
+
+function dotHandler(idx) {
+  // console.log($(".dot").eq(idx));
+  $(".dot").removeClass("active");
+  $(".dot").eq(idx).addClass("active");
+}
+
+// Auto slides
+// function autoSlide() {
+//   if (index < mySlides.length - 1) {
+//     index++;
+//     console.log(index);
+//   } else if (index == mySlides.length - 1) {
+//     index = 0;
+//     console.log(index);
+//   }
+//   imgHandler(index);
+//   dotHandler(index);
+// }
+
+// let autoImgShow = setInterval(autoSlide, 2000);
+
+// $(".slideImg").on("mouseover", () => {
+//   clearInterval(autoImgShow);
+// });
+
+// $(".slideImg").on("mouseleave", () => {
+//   clearInterval(autoImgShow);
+//   setInterval(autoSlide, 2000);
+// });
+
+// ----------
+
+// Quick view modal box
+
+// init
+function quickViewInit() {}
+quickViewInit();
+
+// open quick view
+function openQuickView() {
+  $(".product-quick-view").slideDown(250);
+  $(".product-quick-view").css("display", "flex");
+}
+
+$(".product-quick-view-button").click(() => {
+  openQuickView();
+});
+
+// close quick view
+function closeQuickView(e) {
+  $(".product-quick-view").slideUp(250);
+}
+
+// $(".product-quick-view").click(() => {
+//   closeQuickView();
+// });
+
+$(".product-quick-view-close-button").click(() => {
+  closeQuickView();
+});
+
+// press esc to close modal box+
+
+$(document).on("keydown", (e) => {
+  if (e.keyCode == 27) {
+    closeQuickView();
+  }
+});
+
+// Description / Feature switch
+
+const title = $(".quick-view-title");
+const description = $(".quick-view-description");
+const features = $(".quick-view-features");
+
+title.click((e) => {
+  detailsActive(e);
+});
+
+function detailsActive(e) {
+  // console.log(e.target);
+  title.removeClass("quick-view-title-active");
+  $(e.target).addClass("quick-view-title-active");
+
+  if (e.target.innerText == "Description") {
+    description.slideDown();
+    features.slideUp();
+  } else {
+    description.slideUp();
+    features.slideDown();
+  }
+}
