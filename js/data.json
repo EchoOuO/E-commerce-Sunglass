@@ -2,43 +2,101 @@
   {
     "pid": 1001,
     "Name": "Hawthorne Acetate",
-    "Color": ["Black Chrome", "Tortoise", "Blue Coral"],
+    "Color": [
+      "Black Chrome",
+      "Tortoise",
+      "Blue Coral"
+    ],
     "Img": "/img/product-display/Hawthome Acetate-Black Chrome-1.jpg",
     "UV": "100%",
     "Price": "199",
     "Weight": "50",
-    "Fmaterial": ["Wood", "Metal", "Acetate"],
+    "Fmaterial": [
+      "Wood",
+      "Metal",
+      "Acetate"
+    ],
     "Lmaterial": "CR39",
     "Review": 4.9,
     "ReviewN": 45,
-    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/hawthorne-acetate?variant=55482917191"
+    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/hawthorne-acetate?variant=55482917191",
+    "Description": [
+      "A mix of premium acetate, metal fixtures, and wood accents come together beautifully in our take on this iconic, vintage silhouette. The rounded lenses and mix of materials is perfect for those seeking a more bold look, while maintaining classic cool. The Hawthorne looks good on rectangular, oval, heart, and diamond face shapes."
+    ],
+    "Features": [
+      "Italian cellulose acetate",
+      "Genuine wood inlays",
+      "5-barrel German hinges",
+      "Premium CR-39 lens",
+      "100% UVA/UVB protection","Custom travel case",
+      "Microfiber cleaning cloth",
+      "1-year warranty"
+    ]
   },
   {
     "pid": 1002,
     "Name": "Canby ACTV",
-    "Color": ["Emerald", "Matte Apricot", "Oak Moss"],
+    "Color": [
+      "Emerald",
+      "Matte Apricot",
+      "Oak Moss"
+    ],
     "Img": "/img/product-display/Canby ACTV-Emerald-1.jpg",
     "UV": "100%",
     "Price": "149",
     "Weight": "65",
-    "Fmaterial": ["Wood", "Acetate"],
+    "Fmaterial": [
+      "Wood",
+      "Acetate"
+    ],
     "Lmaterial": "CR39",
     "Review": 4.76,
     "ReviewN": 33,
-    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/canby-actv-sunglasses-1?variant=46307944268009"
+    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/canby-actv-sunglasses-1?variant=46307944268009",
+    "Description": [
+      "Engineered to endure all your active pursuits, the ACTV collection blends classic shapes with performance sunglass features.  Our no-slip, no-fog, no-bounce design allows for unobtrusive sun protection whether you're out running, cycling, climbing, or paddling.  All-day comfort, everyday style."
+    ],
+    "Features": [
+      "Ultra-thin 100% recycled nylon frame",
+      "Genuine wood inlays",
+      "Face-locking rubberized nosepads",
+      "Polarized optics with water and smudge-resistant coating",
+      "7-layer anti-reflective coating with 100% UVA/UVB protection",
+      "Flexible rubberized temple tips",
+      " Custom travel case",
+      "Microfiber cleaning cloth",
+      "1-year warranty"
+    ]
   },
   {
     "pid": 1003,
     "Name": "Kennedy Acetate",
-    "Color": ["Matte Black", "Tangerine", "Matte Havana"],
+    "Color": [
+      "Matte Black",
+      "Tangerine",
+      "Matte Havana"
+    ],
     "Img": "/img/product-display/Kennedy Acetate-Matte Black-1.jpg",
     "UV": "100%",
     "Price": "199",
     "Weight": "60",
-    "Fmaterial": ["Acetate"],
+    "Fmaterial": [
+      "Acetate"
+    ],
     "Lmaterial": "CR39",
     "Review": 4.86,
     "ReviewN": 7,
-    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/kennedy-acetate-sunglasses-1?variant=44931794829545"
-  }
-]
+    "Url": "https://shwoodshop.com/collections/best-selling-sunglasses-all/products/kennedy-acetate-sunglasses-1?variant=44931794829545",
+    "Description": ["The Kennedy's modest silhouette and keyhole bridge are flattering on a wide range of face shapes. Unique to our Acetate Collection, this unisex style is a great choice for those seeking a classic but contemporary look. The Kennedy looks good on rectangular, oval, heart, and diamond face shapes."],
+    "Features": [
+        "Italian cellulose acetate",
+        "Stainless steel rivets",
+        "5-barrel German hinges",
+        "Premium CR-39 lens",
+        "100% UVA/UVB protection",
+        " Custom travel case",
+        " Microfiber cleaning cloth",
+        "1-year warranty"
+      ]
+    }
+  ]

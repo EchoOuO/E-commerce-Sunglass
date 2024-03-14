@@ -703,6 +703,7 @@ content: '$';
 
 /* right part */
 .quick-view-detail-container{
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -778,7 +779,6 @@ content: '$';
   margin-bottom: 30px;
   font-size: 25px;
 }
-
 
 .quick-view-review-container {
   display: flex;
@@ -860,6 +860,7 @@ content: '$';
   width: 100%;
   position: relative;
   margin: auto;
+  }
 
 
 .mySlides {
@@ -921,7 +922,6 @@ content: '$';
   gap: 5px;
 }
 
-
 .dot {
   cursor: pointer;
   height: 10px;
@@ -935,7 +935,6 @@ content: '$';
 
 .dot:hover,.active
  {
-  numbertext;
   background-color: #5f5f5f;
 }
 
