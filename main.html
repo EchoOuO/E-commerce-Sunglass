@@ -7,6 +7,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/nav.css" />
+    <link rel="stylesheet" href="./style/footer.css" />
 
     <!-- Font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +33,216 @@
 
   <body>
     <main>
-      <section class="comparison-table hidden">
+      <!-- Navigation Bar START -->
+      <section>
+        <nav class="nav-bar">
+          <div class="nav-bar-div-left">
+            <a href="http://127.0.0.1:5501/main.html"
+              ><img src="./icon/logo.png" alt="Logo" id="nav-bar-logo"
+            /></a>
+            <img src="./icon/arrow-right.png" alt="" id="nav-arrow-right" />
+          </div>
+          <div class="nav-bar-div-mid">
+            <ul class="nav-bar-ul">
+              <li>
+                <a href="https://shwoodshop.com/collections/mens-sunglasses"
+                  >MEN</a
+                >
+              </li>
+              <li>
+                <a href="https://shwoodshop.com/collections/womens-sunglasses"
+                  >WOMEN</a
+                >
+              </li>
+              <li><a href="#">COLLECTIONS</a></li>
+              <li><a href="#">EXPLORE</a></li>
+            </ul>
+          </div>
+          <div class="nav-bar-div-right">
+            <div class="icons-group">
+              <a href=""
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-search"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" /></svg
+              ></a>
+              <a href="#" id="bfr-img"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-user-round"
+                >
+                  <circle cx="12" cy="8" r="5" />
+                  <path d="M20 21a8 8 0 0 0-16 0" /></svg
+              ></a>
+              <a href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart"
+                >
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path
+                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+        </nav>
+      </section>
+
+      <!-- Header START -->
+      <section class="header">
+        <div class="header-container">
+          <div class="header-text-container">
+            <p>SHWOOD X IRON & RESIN</p>
+            <h1>The Kennedy Riding Glasses</h1>
+            <a
+              href="https://shwoodshop.com/collections/shwood-x-iron-resin"
+              target="_blank"
+              >Shop The Collection</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Image Gallery START -->
+      <section class="img-gallery">
+        <div class="img-gallery-container">
+          <div class="img-container">
+            <img src="./img/product-type-1.png" alt="" />
+            <h3>Wood Classics</h3>
+            <p>Our claim to fame: luxurious, domestic hardwood frames.</p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-2.png" alt="" />
+            <h3>Acetate Originals</h3>
+            <p>Contemporary styles in premium Italian cellulose acetate.</p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-3.png" alt="" />
+            <h3>CAMP Eyewear</h3>
+            <p>Durable frames and polarized lenses built for adventure.</p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-4.png" alt="" />
+            <h3>ACTV Performance</h3>
+            <p>
+              Performance eyewear engineered to endure all of your active
+              pursuits.
+            </p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-5.png" alt="" />
+            <h3>Metal Originals</h3>
+            <p>
+              Premium, lightweight metal frams with unique wooden detailing.
+            </p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-6.png" alt="" />
+            <h3>Pendleton Eyewear</h3>
+            <p>
+              Pendleton's iconic patterns meet post-consumer recycled plastic.
+            </p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-7.png" alt="" />
+            <h3>Stablized Series</h3>
+            <p>
+              Sustainably-sourced, organic mateirals cast in resin and molded
+              into frames
+            </p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="img-gallery-button-container">
+          <div class="img-gallery-button">&#10094;</div>
+          <div class="img-gallery-button">&#10095;</div>
+        </div>
+      </section>
+
+      <!-- Img section START -->
+      <section class="img-section">
+        <div class="img-area">
+          <div class="text-area">
+            <h1>Experiment Everyday</h1>
+            <p>
+              Boundaries are pushed and failures are celebrated. The drive to
+              experiment is what fuels our passion and transforms our work int a
+              lobor of love
+            </p>
+            <a class="img-section-explore-button" href=""
+              >Explore Our Process</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Review START -->
+      <section class="review">
+        <div class="review-top-container">
+          <p class="review-customer-review-text">CUSTOMER REVIEWS</p>
+          <a class="review-shop-button" href="">Shop</a>
+        </div>
+        <div class="review-text-container">
+          <div>
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+          </div>
+          <h3>Canby Wood</h3>
+          <p>
+            "The only thing better than looking at these sunglasses is looking
+            through them"
+          </p>
+          <p>--John S.</p>
+        </div>
+        <div class="review-img-container">
+          <img class="review-img-product" src="./img/review-img-1.png" alt="" />
+        </div>
+        <div class="review-arrow-button-container">
+          <div class="review-arrow-button">&#10094;</div>
+          <div class="review-arrow-button">&#10095;</div>
+        </div>
+      </section>
+
+      <!-- Product Comparison Table START -->
+      <section class="comparison-table">
         <div class="table-filter"></div>
         <div class="comparison-table-container">
           <button class="comparison-close-button">&#10005;</button>
@@ -171,7 +382,7 @@
         </div>
       </section>
 
-      <!-- "section name" START -->
+      <!-- Product display START -->
       <section class="product-display">
         <div class="product-title-container">
           <h2 class="product-title">Shop Best Sellers</h2>
@@ -438,6 +649,136 @@
           </div>
         </div>
       </section>
+
+      <!-- Img section-2 START -->
+      <section class="img-section-second">
+        <p>CAMP</p>
+        <h1>National Parks Collection</h1>
+        <a class="img-section-second-exlpore-button" href="">Explpore More</a>
+      </section>
+
+      <!-- Footer START -->
+      <footer class="">
+        <div class="footer-top-container">
+          <div class="footer-icon-container">
+            <div class="footer-review-star-container">
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+            </div>
+            <a href="">Read Review</a>
+          </div>
+          <div class="footer-icon-container">
+            <img
+              class="footer-icon"
+              id="footer-shipping-icon"
+              src="./icon/footer-img-shipping.png"
+              alt=""
+            />
+            <a href="">Free Shipping</a>
+          </div>
+          <div class="footer-icon-container">
+            <img
+              class="footer-icon"
+              src="./icon/footer-img-return.png"
+              alt=""
+            />
+            <a href="">Free Returns</a>
+          </div>
+          <div class="footer-icon-container">
+            <img
+              class="footer-icon"
+              src="./icon/footer-img-retails.png"
+              alt=""
+            />
+            <a href="">Retailers Near You</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom-container">
+          <div class="footer-text-big-container">
+            <h3>Stay In Touch</h3>
+            <p>
+              Sign up for our newsletter to receive 10% off your first purchase
+            </p>
+            <form>
+              <input
+                class="footer-input"
+                placeholder="Your email"
+                type="email"
+                required
+              />
+              <button type="submit" class="footer-email-button">Join</button>
+            </form>
+          </div>
+
+          <div class="footer-text-container">
+            <p>ABOUT</p>
+            <ul>
+              <li>Our Story</li>
+              <li>Our Process</li>
+              <li>Time Well Spent</li>
+            </ul>
+          </div>
+          <div class="footer-text-container">
+            <p>SUPPORT</p>
+            <ul>
+              <li>My Account</li>
+              <li>Track My Order</li>
+              <li>Returns</li>
+              <li>Warranty</li>
+              <li>FAQ/Help</li>
+              <li>Wholesale</li>
+              <li>Affiliate Program</li>
+              <li>Military & First Responders</li>
+            </ul>
+          </div>
+          <div class="footer-text-container">
+            <p>CONNECT</p>
+            <ul>
+              <li>Instagram</li>
+              <li>Facebook</li>
+              <li>Vimeo</li>
+              <li>Pinterest</li>
+            </ul>
+          </div>
+          <div class="footer-text-container">
+            <p>CONTACT</p>
+            <ul>
+              <li>Customer Service:</li>
+              <li>(503) 367-9252 9–3 PST, Mon–Fri</li>
+              <li>729 SE Grant St Portland OR 97214</li>
+              <li>info@shwoodshop.com</li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-copyright">
+          © 2024 SHWOOD EYEWEAR | TERMS | PRIVACY POLICY | ACCESSIBILITY | DO
+          NOT SELL MY PERSONAL INFORMATION
+        </p>
+      </footer>
     </main>
   </body>
 

@@ -13,6 +13,7 @@
 // Get product data from JSON
 const productList = new Map();
 const comparisonList = new Map();
+const quickViewList = new Map();
 
 const load = () => {
   const xHttp = new XMLHttpRequest();
@@ -120,7 +121,7 @@ for (let idx of productImg) {
   });
 }
 
-// open/close table (fade in/out)
+// open table (fade in)
 function openTable(e) {
   if ($(".checked").length > 1) {
     $(".comparison-table").fadeIn();
@@ -144,6 +145,7 @@ $(".product-compare-button").click(() => {
   tableHandler();
 });
 
+// close table (fade out)
 function closeTable(e) {
   $(".comparison-table").fadeOut(100);
 }
@@ -206,6 +208,9 @@ document
 
 function tableHandler() {
   let index = 0;
+  let tmpWeight = 0;
+  let tmpReview = 0;
+  let tmpPrice = 1000;
 
   tableInit();
 
@@ -225,30 +230,40 @@ function tableHandler() {
     $(".table-price-text").eq(index).text(product.Price);
     $(".table-cart-anchor").eq(index).attr("href", product.Url);
 
-    for (let i = 0; i < product.Color.length; i++) {
-      // console.log(
-      //   $(".product-container").find(".product-color-active").attr("color")
-      // );
+    // compare & show which is better -- ongoing
+    if (tmpWeight < $(".table-weight-text").eq(index).text()) {
+      tmpWeight = $(".table-weight-text").eq(index).text();
+    }
+    if (tmpReview < $(".table-review-text").eq(index).text()) {
+      tmpReview = $(".table-review-text").eq(index).text();
+    }
+    if (tmpPrice > $(".table-price-text").eq(index).text()) {
+      tmpPrice = $(".table-price-text").eq(index).text();
+    }
+    // 如何抓到target ???????
 
+    // get active color & change img
+    for (let i = 0; i < product.Color.length; i++) {
+      let idxOfCheckBox;
+      idxOfCheckBox = product.pid - 1001;
       const color = $("<img></img>");
       let activeColor;
       activeColor = $(".product-container")
         .find(".product-color-active")
-        .eq(index)
+        .eq(idxOfCheckBox)
         .attr("color");
 
-      console.log(product.Color[i]);
-      console.log(activeColor);
-      console.log("---------");
-
-      // bugs!!!!!!!!!!!
-      // 只有當 productList 內的順序 跟 外面的順序是一樣的時候才能動
-      // 例如 外面是 1 2 3，而productList 是 2 1 3 則 全部失敗、1 2 3 全部成功、2 1 3 則 3 成功
       if (
         product.Color[i] == activeColor &&
         $(".product-comparison-checkbox").hasClass("checked")
       ) {
         color.addClass("table-product-color-active");
+        $(".table-product-img")
+          .eq(index)
+          .attr(
+            "src",
+            `./img/product-display/${product.Name}-${product.Color[i]}-1.jpg`
+          );
       }
 
       color.attr("src", `./icon/color-${product.Name}-${product.Color[i]}.png`);
@@ -292,10 +307,14 @@ function tableHandler() {
     $(".table-cart-button").eq(2).attr("disabled", "disabled");
     $(".table-cart-button").eq(2).css("cursor", "not-allowed");
     $(".table-cart-button").eq(2).css("display", "none");
+    $(".table-weight-text").eq(2).addClass("table-weight-text-none");
+    $(".table-price-text").eq(2).addClass("table-price-text-none");
   } else {
     $(".table-cart-button").eq(2).removeAttr("disabled");
     $(".table-cart-button").eq(2).css("cursor", "pointer");
     $(".table-cart-button").eq(2).css("display", "");
+    $(".table-weight-text").eq(2).removeClass("table-weight-text-none");
+    $(".table-price-text").eq(2).removeClass("table-price-text-none");
   }
 }
 
@@ -310,6 +329,8 @@ function tableInit() {
   $(".table-review-text").text("");
   $(".table-price-text").text("");
 }
+
+// ----------
 
 // Product Quick View
 
@@ -390,12 +411,11 @@ function dotHandler(idx) {
 //   setInterval(autoSlide, 2000);
 // });
 
-// ----------
-
 // Quick view modal box
 
 // init
 function quickViewInit() {}
+
 quickViewInit();
 
 // open quick view
@@ -404,8 +424,9 @@ function openQuickView() {
   $(".product-quick-view").css("display", "flex");
 }
 
-$(".product-quick-view-button").click(() => {
+$(".product-quick-view-button").click((e) => {
   openQuickView();
+  quickViewTextHandler(e);
 });
 
 // close quick view
@@ -422,7 +443,6 @@ $(".product-quick-view-close-button").click(() => {
 });
 
 // press esc to close modal box+
-
 $(document).on("keydown", (e) => {
   if (e.keyCode == 27) {
     closeQuickView();
@@ -430,7 +450,6 @@ $(document).on("keydown", (e) => {
 });
 
 // Description / Feature switch
-
 const title = $(".quick-view-title");
 const description = $(".quick-view-description");
 const features = $(".quick-view-features");
@@ -440,7 +459,6 @@ title.click((e) => {
 });
 
 function detailsActive(e) {
-  // console.log(e.target);
   title.removeClass("quick-view-title-active");
   $(e.target).addClass("quick-view-title-active");
 
@@ -452,3 +470,10 @@ function detailsActive(e) {
     features.slideDown();
   }
 }
+
+// Import data to Quick View
+function quickViewTextHandler(e) {
+  // console.log($(e.target));
+}
+
+// Quick View List

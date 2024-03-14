@@ -35,7 +35,8 @@ h6 {
 p,
 a,
 span,
-button {
+button,
+li {
   font-family: "Karla", sans-serif;
   font-weight: 500;
 }
@@ -49,13 +50,252 @@ button {
 /* 2. Suggest class/id name = SectionName-xxxxx */
 /* for example: product-container */
 
+
+/* --- Header --- */
+.header {
+  display: flex;
+  height: 650px;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 100px;
+  background-image: url(../img/header-img.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  gap: 10px;
+  color: white;
+  letter-spacing: 2px
+}
+
+.header-text-container h1 {
+  font-size: 50px;
+
+}
+
+.header-text-container a {
+  text-align: center;
+  width: 250px;
+  text-decoration: none;
+  padding: 18px 15px;
+  background-color: #C8A846;
+  color: white;
+  border-radius: 30px;
+  font-size: 18px;
+}
+
+/* --- Image Gallery --- */
+
+.img-gallery {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+
+  overflow-x: hidden;
+}
+
+.img-gallery-container {
+  width: 500px;
+  display: flex;
+  gap: 30px;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.img-container img {
+  width: 380px;
+  height: auto;
+}
+
+.img-container h3 {
+  font-size: 30px;
+}
+
+.img-container p {
+  font-weight: 400;
+}
+
+.img-gallery-button-container {
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+}
+
+.img-gallery-shop-button {
+  color: #989898;
+  text-decoration: none;
+}
+
+.img-gallery-button{
+  border: solid 1px #999;
+  color: #999;
+  font-weight: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Img section --- */
+.img-section {
+  width: 100%;
+  height: auto;
+  margin-bottom: 70px;
+}
+
+.img-area {
+  width: 100%;
+  height: 500px;
+  background-image: url(../img/main-img.jpg);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+
+  padding: 0px 80px;
+}
+
+.text-area {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 60%;
+}
+
+.text-area h1 {
+  font-size: 50px;
+}
+
+.img-section-explore-button {
+  text-align: center;
+  width: 250px;
+  text-decoration: none;
+  padding: 15px 30px;
+  background-color: #C8A846;
+  color: white;
+  border-radius: 30px;
+  font-size: 18px;
+  width: fit-content;
+}
+
+/* --- Review --- */
+.review {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 60px;
+  background-color: #F8F8F8;
+  margin-bottom: 80px;
+}
+
+.review-top-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  background-color: #EEEEE9;
+}
+
+.review-customer-review-text {
+  margin-left: 13%;
+}
+
+.review-shop-button{
+  text-align: center;
+  width: 250px;
+  text-decoration: none;
+  padding: 10px 30px;
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  font-size: 18px;
+  width: fit-content;
+  margin-right: 30px;
+}
+
+.review-text-container{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0px 40px;
+  background-color: #EEEEE9;
+}
+
+.review-text-container h3 {
+  font-size: 40px;
+}
+
+.review-text-container p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.review-img-star {
+  width: 20px;
+}
+
+.review-img-container{
+  width: 60%;
+}
+
+.review-img-product {
+  width: 100%;
+  height: 105%;
+}
+
+.review-arrow-button-container {
+  display: flex;
+  gap: 30px;
+  background-color: #EEEEE9;
+  width: 100%;
+  padding-left: 15.5%;
+  padding-bottom: 40px;
+}
+
+.review-arrow-button {
+  border: solid 1px #999;
+  color: #999;
+  font-weight: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* --- Product display --- */
 
 .product-display {
   display: flex;
   flex-direction: column;
   padding: 0px 60px;
-  margin: 50px auto;
+  margin: 100px auto;
 }
 
 .product-title-container {
@@ -195,11 +435,16 @@ button {
 }
 
 .comparison-table {
+  width: 100%;
+  height: 100%;
   position: fixed;
   display: none;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 5;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 
   /* 這東西好像也有bug，位置會跑XDD */
   backdrop-filter: blur(2px);
@@ -308,6 +553,22 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.table-weight-text::after{
+  content: 'g';
+}
+
+.table-weight-text-none::after{
+  content: '';
+}
+
+.table-price-text::before {
+content: '$';
+}
+
+.table-price-text-none::before {
+  content: '';
 }
 
 .material-div-container {
@@ -514,6 +775,7 @@ button {
   font-size: 25px;
 }
 
+
 .quick-view-review-container {
   display: flex;
   gap: 10px;
@@ -580,6 +842,7 @@ button {
   color: white;
 }
 
+
 /* slideshow */
 .slideshow-container {
   width: 100%;
@@ -645,6 +908,7 @@ button {
   justify-content: center;
   gap: 5px;
 }
+
 
 .dot {
   cursor: pointer;
