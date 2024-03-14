@@ -112,13 +112,18 @@ li {
   display: flex;
   gap: 30px;
 }
+.img-gallery-container::-webkit-scrollbar {
+  width: .1px;
+}
 
 .img-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
+.img-gallery-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 .img-container img {
   width: 380px;
   height: auto;
