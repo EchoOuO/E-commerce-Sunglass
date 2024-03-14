@@ -484,10 +484,13 @@ $(document).ready(function () {
       $('.quick-view-price').text(product.Price);
       $('.quick-view-description').text(product.Description);
       // Assume "Img" in your JSON is the main image
-      $('.slideImg').attr('src','product.Img');
-      $('.quick-view-features').text(product.Features);
+    
+      // $('.slideImg').attr('src','product.Img');
+      $('.quick-view-features').html(`<ul>${product.Features.map(f => `<li>${f}</li>`).join('')}</ul>`);
       $('.quick-view-review').text(product.Review);
       $('.reviewN').text(product.ReviewN);
+      $('.quick-view-color-container').text(product.Color.join(', '));
+      $('.quick-view-material-container').text(product.Fmaterial.join(', '));
 
       // Display the modal
       $('.product-quick-view').slideDown(250).css('display', 'flex');
@@ -498,64 +501,6 @@ $(document).ready(function () {
 
 
 
-  // Close the Quick View modal
-  $('.product-quick-view-close-button').click(function () {
-    $('.product-quick-view').slideUp(250);
-  });
-});
-
-// Change picture
-$(document).ready(function () {
-  // Load product data from JSON
-  const productList = new Map();
-
-  function loadProducts() {
-    $.getJSON('./js/data.json', function (data) {
-      data.forEach(function (product) {
-        productList.set(product.pid, product);
-      });
-    });
-  }
-  loadProducts();
-
-  // Quick View button event listener
-  $('.product-quick-view-button').on('click', function () {
-    const pid = $(this).data('pid'); // 'pid' is set as a data attribute on the button
-    const product = productList.get(pid); // Get product data from the map
-
-    if (product) {
-      populateQuickView(product); // Call function to populate the Quick View modal
-    }
-  });
-
-  function populateQuickView(product) {
-    // Set text for name, description, etc.
-    $('.quick-view-product-name').text(product.Name);
-    $('.quick-view-description').text(product.Description.join(' ')); // Join array into string
-    // ... set text for other fields
-
-    // Set up the image slideshow
-    const slideshowContainer = $('.slideshow-container');
-    // slideshowContainer.empty(); // Remove any existing images
-
-    // Assuming your images follow a naming convention
-    product.Color.forEach((color, index) => {
-      const imageSrc = `./ img / product - display / ${product.Name}-${color} -1.jpg`;
-      // slideshowContainer.append(`
-      //   < div class="mySlides" style = "display: ${index === 0 ? 'block' : 'none'};" >
-      //     <img class="slideImg" src="${imageSrc}" alt="${product.Name}">
-      //     </div>
-      // `);
-    });
-
-    // Open the Quick View modal (assuming you have a function to open it)
-    openQuickView();
-  }
-
-  function openQuickView() {
-    $('.product-quick-view').fadeIn();
-    // Any additional code needed to display the modal
-  }
 });
 
 // // Update colors, materials, description, features, etc.
