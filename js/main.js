@@ -484,7 +484,7 @@ $(document).ready(function () {
       $('.quick-view-price').text(product.Price);
       $('.quick-view-description').text(product.Description);
       // Assume "Img" in your JSON is the main image
-    
+
       // $('.slideImg').attr('src','product.Img');
       $('.quick-view-features').html(`<ul>${product.Features.map(f => `<li>${f}</li>`).join('')}</ul>`);
       $('.quick-view-review').text(product.Review);
@@ -493,7 +493,7 @@ $(document).ready(function () {
       $('.quick-view-material-container').text(product.Fmaterial.join(', '));
       $('.mySlides img').attr('src', './img/product-display/WEBP.jpg');
       $('.quick-view-more-details-button').attr('href', product.Url);
-      
+
       // Display the modal
       $('.product-quick-view').slideDown(250).css('display', 'flex');
     }
