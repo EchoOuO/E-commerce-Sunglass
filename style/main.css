@@ -406,6 +406,10 @@ li {
   padding-top: 10px;
 }
 
+.product-price::before{
+  content: '$';
+}
+
 .product-detail-container p {
   font-size: 16px;
   font-weight: 500;

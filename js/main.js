@@ -208,12 +208,12 @@ document
       });
   });
 
+let tmpWeight = 1000;
+let tmpReview = 0;
+let tmpPrice = 1000;
+
 function tableHandler() {
   let index = 0;
-  let tmpWeight = 0;
-  let tmpReview = 0;
-  let tmpPrice = 1000;
-
   tableInit();
 
   for (let product of comparisonList.values()) {
@@ -231,18 +231,6 @@ function tableHandler() {
     $(".table-review-text").eq(index).text(product.Review);
     $(".table-price-text").eq(index).text(product.Price);
     $(".table-cart-anchor").eq(index).attr("href", product.Url);
-
-    // compare & show which is better -- ongoing
-    if (tmpWeight < $(".table-weight-text").eq(index).text()) {
-      tmpWeight = $(".table-weight-text").eq(index).text();
-    }
-    if (tmpReview < $(".table-review-text").eq(index).text()) {
-      tmpReview = $(".table-review-text").eq(index).text();
-    }
-    if (tmpPrice > $(".table-price-text").eq(index).text()) {
-      tmpPrice = $(".table-price-text").eq(index).text();
-    }
-    // 如何抓到target ???????
 
     // get active color & change img
     for (let i = 0; i < product.Color.length; i++) {
@@ -283,7 +271,55 @@ function tableHandler() {
     }
     // color.first().addClass("table-product-color-active");
 
+    // compare & show which is better
+    if (tmpWeight > $(".table-weight-text").eq(index).text()) {
+      tmpWeight = $(".table-weight-text").eq(index).text();
+    }
+    if (tmpReview < $(".table-review-text").eq(index).text()) {
+      tmpReview = $(".table-review-text").eq(index).text();
+    }
+    if (tmpPrice > $(".table-price-text").eq(index).text()) {
+      tmpPrice = $(".table-price-text").eq(index).text();
+    }
+
     index++;
+
+    if (index == comparisonList.size) {
+      findtheBest(index);
+    }
+  }
+
+  // compare and color the best one
+  function findtheBest(index) {
+    $(".table-weight-text").css("color", "black");
+    $(".table-review-text").css("color", "black");
+    $(".table-price-text").css("color", "black");
+
+    $(".table-weight-text").each(function () {
+      let weightText = $(this).text();
+      if (weightText === tmpWeight) {
+        $(this).css("color", "green");
+      }
+    });
+    $(".table-review-text").each(function () {
+      let weightReview = $(this).text();
+
+      if (weightReview === tmpReview) {
+        $(this).css("color", "green");
+      }
+    });
+    $(".table-price-text").each(function () {
+      let weightPrice = $(this).text();
+
+      if (weightPrice === tmpPrice) {
+        $(this).css("color", "green");
+      }
+    });
+
+    // clear them after every comparison
+    tmpWeight = 1000;
+    tmpReview = 0;
+    tmpPrice = 1000;
   }
 
   // Table product color change
