@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/nav.css" />
     <link rel="stylesheet" href="./style/footer.css" />
-
+    <link rel="stylesheet" href="./style/cart.css" />
     <!-- Font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +36,70 @@
       <!-- Navigation Bar START -->
       <section>
         <nav class="nav-bar">
+          <div class="nav-bar-div-left">
+            <a href="./main.html"><img src="./icon/logo.png" alt="Logo" id="nav-bar-logo" /></a>
+            <img src="./icon/arrow-right.png" alt="" id="nav-arrow-right" />
+          </div>
+          <div class="nav-bar-div-mid">
+            <ul class="nav-bar-ul">
+              <li><a href="https://shwoodshop.com/collections/mens-sunglasses">MEN</a></li>
+              <li><a href="https://shwoodshop.com/collections/womens-sunglasses">WOMEN</a></li>
+              <li><a href="">COLLECTIONS</a></li>
+              <li><a href="">EXPLORE</a></li>
+            </ul>
+          </div>
+          <div class="nav-bar-div-right">
+            <div class="icons-group">
+              <input type="text" id="search-input" style="display: none; width: 120px" />
+              <div id="search-results" style="display: none">
+                <!-- New results container -->
+                <ul id="results"></ul>
+              </div>
+              <a href="#" id="search-btn"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-search"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" /></svg
+              ></a>
+              <!-- ... -->
+              <a class="shopping-cart-button"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                /></svg
+            ></a>
+            </div>
+          </div>
+        </nav>
+        <div class="icons-group">
+          <input type="text" id="search-input" style="display: none" />
+          <div id="results"></div>
+        </div>
+
+        <!-- <nav class="nav-bar">
           <div class="nav-bar-div-left">
             <a href="http://127.0.0.1:5501/main.html"
               ><img src="./icon/logo.png" alt="Logo" id="nav-bar-logo"
@@ -92,7 +156,7 @@
                   <circle cx="12" cy="8" r="5" />
                   <path d="M20 21a8 8 0 0 0-16 0" /></svg
               ></a>
-              <a href="#"
+              <a class="shopping-cart-button" id="search-btn"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -114,6 +178,10 @@
             </div>
           </div>
         </nav>
+        <div class="icons-group">
+          <input type="text" id="search-input" style="display: none" />
+          <div id="results"></div>
+        </div>
       </section>
 
       <!-- Header START -->
@@ -428,7 +496,7 @@
                 color="Blue Coral"
               />
             </div>
-            <p class="product-quick-view-button">→ Quick View ←</p>
+            <p class="product-quick-view-button" pid="1001">→ Quick View ←</p>
             <div class="product-detail-container">
               <!-- <p class="product-name">Hawthorne Acetate</p>
               <p class="product-price">$199</p> -->
@@ -466,7 +534,7 @@
                 color="Oak Moss"
               />
             </div>
-            <p class="product-quick-view-button">→ Quick View ←</p>
+            <p class="product-quick-view-button" pid="1002">→ Quick View ←</p>
             <div class="product-detail-container">
               <!-- <p class="product-name">Canby ACTV</p>
               <p class="product-price">$149</p> -->
@@ -504,7 +572,7 @@
                 color="Matte Havana"
               />
             </div>
-            <p class="product-quick-view-button">→ Quick View ←</p>
+            <p class="product-quick-view-button" pid="1003">→ Quick View ←</p>
             <div class="product-detail-container">
               <!-- <p class="product-name">Kennedy Acetate</p>
               <p class="product-price">$149</p> -->
@@ -645,10 +713,43 @@
                 <button class="quick-view-number-calculator">+</button>
               </div>
               <button class="quick-view-cart-button">Add to Cart</button>
+              <a class="shopping-cart-button"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart"
+                >
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path
+                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                  /></svg
+              ></a>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Cart START -->
+      <div class="cart">
+        <button class="cart-close-button">&#10005;</button>
+        <h1>Shopping Cart</h1>
+        <table class="cart-table">
+          <th>Name</th>
+          <th>Pirce</th>
+          <th>Amout</th>
+          <tbody></tbody>
+        </table>
+
+        <button class="clear-cart-button">Clear Cart</button>
+      </div>
 
       <!-- Img section-2 START -->
       <section class="img-section-second">
@@ -785,4 +886,5 @@
   <!-- Please use external JS, ./js/main.js -->
 
   <script src="./js/main.js"></script>
+  <script src="./js/searchbtn.js"></script>
 </html>

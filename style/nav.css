@@ -104,6 +104,52 @@
     outline: none;
     box-shadow: none;
   }
-}
 
-/*# sourceMappingURL=nav.css.map */
+  #search-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Style the search input with a bottom border and padding */
+  #search-input {
+    /* border: none; */
+    padding: 5px 0;
+    font-size: 14px;
+  }
+
+  /* Style the search results container with absolute positioning, background color, width, shadow, margin, padding, and z-index */
+  #search-results {
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 10px;
+    z-index: 1000;
+    top: 30px;
+    right: 150px;
+  }
+
+  /* Remove list styling from the results list */
+  #results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Add padding and a bottom border to each result item */
+  #results li {
+    padding: 5px 0;
+    border-bottom: 1px solid #f4f4f4;
+  }
+
+  /* Remove the bottom border from the last result item */
+  #results li:last-child {
+    border-bottom: none;
+  }
+  /* Remove underline from links in the results and change their color */
+  #results li a {
+    text-decoration: none;
+    color: #333; /* Change this to the color you want */
+  }
+}

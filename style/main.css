@@ -809,6 +809,7 @@ content: '$';
   border-radius: 30px;
   justify-content: center;
   align-items: center;
+  align-items: center;
   font-size: 18px;
   background-color: #dfe0e1;
   color: black;
@@ -840,6 +841,13 @@ content: '$';
 .quick-view-cart-button:hover {
   background-color: #c8a846;
   color: white;
+}
+
+.shopping-cart-button{
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
 }
 
 

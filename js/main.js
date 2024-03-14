@@ -66,9 +66,10 @@ productColor.forEach((button, index) => {
     $(e.target.parentElement.children).removeClass("product-color-active");
     $(e.target).addClass("product-color-active");
 
-    $(e.target.parentElement.nextElementSibling.nextElementSibling).text(
-      tmpColor
-    );
+    $(
+      e.target.parentElement.nextElementSibling.nextElementSibling
+        .nextElementSibling
+    ).text(tmpColor);
     $(e.target.parentElement.previousElementSibling).attr(
       "src",
       `./img/product-display/${tmpName}-${tmpColor}-1.jpg`
@@ -158,10 +159,11 @@ $(".comparison-close-button").click(() => {
   closeTable();
 });
 
-// press esc to close modal box+
+// press esc to close modal box+ & cart
 $(document).on("keydown", (e) => {
   if (e.keyCode == 27) {
     closeTable();
+    closeCart();
   }
 });
 
@@ -473,7 +475,64 @@ function detailsActive(e) {
 
 // Import data to Quick View
 function quickViewTextHandler(e) {
-  // console.log($(e.target));
+  addToCart(e);
 }
 
-// Quick View List
+// Add to Cart
+const purchasedList = new Map();
+
+function addToCart(e) {
+  let tmppid = $(e.target).attr("pid");
+  let tmpdata = productList.get(Number(tmppid));
+
+  purchasedList.set(tmppid, tmpdata);
+  // 這邊還要抓到選定的數量、顏色
+  console.log(purchasedList);
+}
+
+// generate cart table
+$(".quick-view-cart-button").click(() => {
+  tablePoper();
+});
+
+const tablePoper = () => {
+  const tbody = $("tbody").eq(1);
+  for (let product of purchasedList.values()) {
+    // console.log(product);
+    let tr = $("<tr></tr>");
+    // tr.addClass("selectable");
+    // tr.click(() => trHandler(product));
+    for (let props in product) {
+      // console.log(props);
+      let td = $("<td></td>");
+      td.text(product[props]); // .text
+      tr.append(td);
+    }
+    tbody.append(tr);
+  }
+};
+
+// open/close cart table
+$(".shopping-cart-button").click(() => {
+  $(".cart").fadeToggle(200);
+  $(".cart").css("display", "flex");
+});
+
+$(".cart-close-button").click(() => {
+  closeCart();
+});
+
+const closeCart = (e) => {
+  $(".cart").fadeOut(200);
+};
+
+// clear cart list
+$(".clear-cart-button").click(() => {
+  clearCart();
+});
+
+const clearCart = () => {
+  purchasedList.clear();
+  console.log(purchasedList);
+  $("tr").remove();
+};
