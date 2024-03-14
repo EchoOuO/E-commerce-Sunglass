@@ -491,17 +491,18 @@ $(document).ready(function () {
       $('.reviewN').text(product.ReviewN);
       $('.quick-view-color-container').text(product.Color.join(', '));
       $('.quick-view-material-container').text(product.Fmaterial.join(', '));
-
+      $('.mySlides img').attr('src', './img/product-display/WEBP.jpg');
+      $('.quick-view-more-details-button').attr('href', product.Url);
+      
       // Display the modal
       $('.product-quick-view').slideDown(250).css('display', 'flex');
     }
 
   });
 
-
-
-
 });
+
+
 
 // // Update colors, materials, description, features, etc.
 // $('.quick-view-color-container').text(product.Color.join(', '));
