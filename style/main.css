@@ -107,7 +107,8 @@ li {
 }
 
 .img-gallery-container {
-  width: 500px;
+  width: 100%;
+  overflow-x: scroll;
   display: flex;
   gap: 30px;
 }
@@ -155,86 +156,6 @@ li {
   justify-content: center;
 }
 
-.img-gallery {
-  padding: 100px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: white;
-  overflow-x: hidden;
-}
-
-.img-gallery-container {
-  width: 100%; /* Alterado para ocupar toda a largura */
-  display: flex;
-  gap: 30px;
-  overflow-x: auto; /* Adicionado para rolagem horizontal */
-}
-
-.img-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  flex-shrink: 0; /* Adicionado para impedir que os contêineres diminuam */
-}
-
-.img-container img {
-  width: 100%; /* Alterado para preencher o contêiner */
-  height: auto;
-}
-
-.img-container h3 {
-  font-size: 30px;
-}
-
-.img-container p {
-  font-weight: 400;
-}
-
-.img-gallery-button-container {
-  margin-top: 30px;
-  display: flex;
-  gap: 30px;
-}
-
-.img-gallery-shop-button {
-  color: #989898;
-  text-decoration: none;
-}
-
-.img-gallery-button {
-  cursor: pointer;
-  border: solid 1px #999;
-  color: #999;
-  font-weight: 100;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Adicionado estilo para os dots */
-#dot-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
 
 
 /* --- Img section --- */
@@ -242,6 +163,7 @@ li {
   width: 100%;
   height: auto;
   margin-bottom: 70px;
+  overflow-y: scroll;
 }
 
 .img-area {
