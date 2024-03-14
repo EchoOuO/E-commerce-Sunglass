@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Original Wood Sunglasses | Shwood Eyewear</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="./style/nav.css" />
+    <link rel="stylesheet" href="./style/footer.css" />
+    <link rel="stylesheet" href="./style/cart.css" />
+    <!-- Font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+      integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <!-- 1. Please divide codes by -->
+  <!-- "section name" START -->
+
+  <!-- 2. Suggest class/id name = SectionName-xxxxx -->
+  <!-- for example: product-container -->
+
+  <body>
+    <main>
+      <!-- Navigation Bar START -->
+      <section>
+        <nav class="nav-bar">
+          <div class="nav-bar-div-left">
+            <a href="./main.html"><img src="./icon/logo.png" alt="Logo" id="nav-bar-logo" /></a>
+            <img src="./icon/arrow-right.png" alt="" id="nav-arrow-right" />
+          </div>
+          <div class="nav-bar-div-mid">
+            <ul class="nav-bar-ul">
+              <li><a href="https://shwoodshop.com/collections/mens-sunglasses">MEN</a></li>
+              <li><a href="https://shwoodshop.com/collections/womens-sunglasses">WOMEN</a></li>
+              <li><a href="">COLLECTIONS</a></li>
+              <li><a href="">EXPLORE</a></li>
+            </ul>
+          </div>
+          <div class="nav-bar-div-right">
+            <div class="icons-group">
+              <input type="text" id="search-input" style="display: none; width: 120px" />
+              <div id="search-results" style="display: none">
+                <!-- New results container -->
+                <ul id="results"></ul>
+              </div>
+              <a href="#" id="search-btn"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-search"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" /></svg
+              ></a>
+              <!-- ... -->
+              <a class="shopping-cart-button"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                /></svg
+            ></a>
+            </div>
+          </div>
+        </nav>
+        <div class="icons-group">
+          <input type="text" id="search-input" style="display: none" />
+          <div id="results"></div>
+        </div>
+
+        <!-- <nav class="nav-bar">
+          <div class="nav-bar-div-left">
+            <a href="http://127.0.0.1:5501/main.html"
+              ><img src="./icon/logo.png" alt="Logo" id="nav-bar-logo"
+            /></a>
+            <img src="./icon/arrow-right.png" alt="" id="nav-arrow-right" />
+          </div>
+          <div class="nav-bar-div-mid">
+            <ul class="nav-bar-ul">
+              <li>
+                <a href="https://shwoodshop.com/collections/mens-sunglasses"
+                  >MEN</a
+                >
+              </li>
+              <li>
+                <a href="https://shwoodshop.com/collections/womens-sunglasses"
+                  >WOMEN</a
+                >
+              </li>
+              <li><a href="#">COLLECTIONS</a></li>
+              <li><a href="#">EXPLORE</a></li>
+            </ul>
+          </div>
+          <div class="nav-bar-div-right">
+            <div class="icons-group">
+              <a href=""
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-search"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" /></svg
+              ></a>
+              <a href="#" id="bfr-img"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-user-round"
+                >
+                  <circle cx="12" cy="8" r="5" />
+                  <path d="M20 21a8 8 0 0 0-16 0" /></svg
+              ></a>
+              <a class="shopping-cart-button" id="search-btn"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart"
+                >
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path
+                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+        </nav>
+        <div class="icons-group">
+          <input type="text" id="search-input" style="display: none" />
+          <div id="results"></div>
+        </div>
+      </section>
+
+      <!-- Header START -->
+      <section class="header">
+        <div class="header-container">
+          <div class="header-text-container">
+            <p>SHWOOD X IRON & RESIN</p>
+            <h1>The Kennedy Riding Glasses</h1>
+            <a
+              href="https://shwoodshop.com/collections/shwood-x-iron-resin"
+              target="_blank"
+              >Shop The Collection</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Image Gallery START -->
+      <section class="img-gallery">
+        <div class="img-gallery-container">
+          <div class="img-container">
+            <img src="./img/product-type-1.png" alt="" />
+            <h3>Wood Classics</h3>
+            <p>Our claim to fame: luxurious, domestic hardwood frames.</p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-2.png" alt="" />
+            <h3>Acetate Originals</h3>
+            <p>Contemporary styles in premium Italian cellulose acetate.</p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-3.png" alt="" />
+            <h3>CAMP Eyewear</h3>
+            <p>Durable frames and polarized lenses built for adventure.</p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-4.png" alt="" />
+            <h3>ACTV Performance</h3>
+            <p>
+              Performance eyewear engineered to endure all of your active
+              pursuits.
+            </p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-5.png" alt="" />
+            <h3>Metal Originals</h3>
+            <p>
+              Premium, lightweight metal frams with unique wooden detailing.
+            </p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-6.png" alt="" />
+            <h3>Pendleton Eyewear</h3>
+            <p>
+              Pendleton's iconic patterns meet post-consumer recycled plastic.
+            </p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+          <div class="img-container">
+            <img src="./img/product-type-7.png" alt="" />
+            <h3>Stablized Series</h3>
+            <p>
+              Sustainably-sourced, organic mateirals cast in resin and molded
+              into frames
+            </p>
+            <a class="img-gallery-shop-button" href="">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="img-gallery-button-container">
+          <div class="img-gallery-button">&#10094;</div>
+          <div class="img-gallery-button">&#10095;</div>
+        </div>
+      </section>
+
+      <!-- Img section START -->
+      <section class="img-section">
+        <div class="img-area">
+          <div class="text-area">
+            <h1>Experiment Everyday</h1>
+            <p>
+              Boundaries are pushed and failures are celebrated. The drive to
+              experiment is what fuels our passion and transforms our work int a
+              lobor of love
+            </p>
+            <a class="img-section-explore-button" href=""
+              >Explore Our Process</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Review START -->
+      <section class="review">
+        <div class="review-top-container">
+          <p class="review-customer-review-text">CUSTOMER REVIEWS</p>
+          <a class="review-shop-button" href="">Shop</a>
+        </div>
+        <div class="review-text-container">
+          <div>
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+            <img class="review-img-star" src="./icon/review-star.png" alt="" />
+          </div>
+          <h3>Canby Wood</h3>
+          <p>
+            "The only thing better than looking at these sunglasses is looking
+            through them"
+          </p>
+          <p>--John S.</p>
+        </div>
+        <div class="review-img-container">
+          <img class="review-img-product" src="./img/review-img-1.png" alt="" />
+        </div>
+        <div class="review-arrow-button-container">
+          <div class="review-arrow-button">&#10094;</div>
+          <div class="review-arrow-button">&#10095;</div>
+        </div>
+      </section>
+
+      <!-- Product Comparison Table START -->
+      <section class="comparison-table">
+        <div class="table-filter"></div>
+        <div class="comparison-table-container">
+          <button class="comparison-close-button">&#10005;</button>
+          <table class="product-table">
+            <tr>
+              <th></th>
+              <th>
+                <img class="table-product-img" src="" alt="" />
+                <div class="table-product-color-container"></div>
+                <p class="table-product-name">text</p>
+              </th>
+              <th>
+                <img class="table-product-img" src="" alt="" />
+                <div class="table-product-color-container"></div>
+                <p class="table-product-name">text</p>
+              </th>
+              <th>
+                <img class="table-product-img" src="" alt="" />
+                <div class="table-product-color-container"></div>
+                <p class="table-product-name">text</p>
+              </th>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">UV Protection</p>
+              </td>
+              <td>
+                <div class="feature-div-container">
+                  <p>UVA/UVB</p>
+                  <p class="table-product-text table-UV-text">text</p>
+                </div>
+              </td>
+              <td>
+                <div class="feature-div-container">
+                  <p>UVA/UVB</p>
+                  <p class="table-product-text table-UV-text">text</p>
+                </div>
+              </td>
+              <td>
+                <div class="feature-div-container">
+                  <p>UVA/UVB</p>
+                  <p class="table-product-text table-UV-text">text</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">Material</p>
+                <p>(Wood / Metal / Acetate)</p>
+              </td>
+              <td class="material-td">
+                <div class="material-div-container">
+                  <p>Frame</p>
+                  <p>Lens</p>
+                  <div class="table-f-material-img-container"></div>
+                  <p class="table-product-text table-l-material-text">text</p>
+                </div>
+              </td>
+              <td class="material-td">
+                <div class="material-div-container">
+                  <p>Frame</p>
+                  <p>Lens</p>
+                  <div class="table-f-material-img-container"></div>
+                  <p class="table-product-text table-l-material-text">text</p>
+                </div>
+              </td>
+              <td class="material-td">
+                <div class="material-div-container">
+                  <p>Frame</p>
+                  <p>Lens</p>
+                  <div class="table-f-material-img-container"></div>
+                  <p class="table-product-text table-l-material-text">text</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">Weight</p>
+              </td>
+              <td>
+                <p class="table-product-text table-weight-text">text</p>
+              </td>
+              <td>
+                <p class="table-product-text table-weight-text">text</p>
+              </td>
+              <td>
+                <p class="table-product-text table-weight-text">text</p>
+              </td>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">Review</p>
+              </td>
+              <td>
+                <p class="table-product-text table-review-text">text</p>
+              </td>
+              <td>
+                <p class="table-product-text table-review-text">text</p>
+              </td>
+              <td>
+                <p class="table-product-text table-review-text">text</p>
+              </td>
+            </tr>
+            <tr class="colored-table">
+              <td>
+                <p class="table-product-feature">Price</p>
+              </td>
+              <td>
+                <p class="table-product-text table-price-text">text</p>
+              </td>
+              <td>
+                <p class="table-product-text table-price-text">text</p>
+              </td>
+              <td>
+                <p class="table-product-text table-price-text">text</p>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <a class="table-cart-anchor" href="" target="_blank"
+                  ><button class="table-cart-button">Choose Me</button></a
+                >
+              </td>
+              <td>
+                <a class="table-cart-anchor" href="" target="_blank"
+                  ><button class="table-cart-button">Choose Me</button></a
+                >
+              </td>
+              <td>
+                <a class="table-cart-anchor" href="" target="_blank"
+                  ><button class="table-cart-button">Choose Me</button></a
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- Product display START -->
+      <section class="product-display">
+        <div class="product-title-container">
+          <h2 class="product-title">Shop Best Sellers</h2>
+          <div class="product-button-container">
+            <button class="product-compare-button">Compare Product</button>
+            <a
+              class="product-shop-button"
+              href="https://shwoodshop.com/collections/best-selling-sunglasses-all"
+              target="_blank"
+              >Shop All</a
+            >
+          </div>
+        </div>
+        <div class="product-all">
+          <div class="product-container">
+            <div class="product-comparison-container">
+              <input class="product-comparison-checkbox" type="checkbox" />
+              <p class="product-comparison-text">Choose to Compare</p>
+            </div>
+
+            <img
+              class="product-img"
+              src="./img/product-display/Hawthorne Acetate-Black Chrome-1.jpg"
+              alt="Hawthorne Acetate"
+            />
+            <div class="product-color-container">
+              <img
+                class="product-color product-color-active"
+                src="./icon/color-Hawthorne Acetate-Black Chrome.png"
+                alt=""
+                color="Black Chrome"
+              />
+              <img
+                class="product-color"
+                src="./icon/color-Hawthorne Acetate-Tortoise.png"
+                alt=""
+                color="Tortoise"
+              />
+              <img
+                class="product-color"
+                src="./icon/color-Hawthorne Acetate-Blue Coral.png"
+                alt=""
+                color="Blue Coral"
+              />
+            </div>
+            <p class="product-quick-view-button" pid="1001">→ Quick View ←</p>
+            <div class="product-detail-container">
+              <!-- <p class="product-name">Hawthorne Acetate</p>
+              <p class="product-price">$199</p> -->
+            </div>
+            <!-- <p class="product-style">Black Chrome</p> -->
+          </div>
+
+          <div class="product-container">
+            <div class="product-comparison-container">
+              <input class="product-comparison-checkbox" type="checkbox" />
+              <p class="product-comparison-text">Choose to Compare</p>
+            </div>
+            <img
+              class="product-img"
+              src="./img/product-display/Canby ACTV-Emerald-1.jpg"
+              alt="Canby ACTV"
+            />
+            <div class="product-color-container">
+              <img
+                class="product-color product-color-active"
+                src="./icon/color-Canby ACTV-Emerald.png"
+                alt=""
+                color="Emerald"
+              />
+              <img
+                class="product-color"
+                src="./icon/color-Canby ACTV-Matte Apricot.png"
+                alt=""
+                color="Matte Apricot"
+              />
+              <img
+                class="product-color"
+                src="./icon/color-Canby ACTV-Oak Moss.png"
+                alt=""
+                color="Oak Moss"
+              />
+            </div>
+            <p class="product-quick-view-button" pid="1002">→ Quick View ←</p>
+            <div class="product-detail-container">
+              <!-- <p class="product-name">Canby ACTV</p>
+              <p class="product-price">$149</p> -->
+            </div>
+            <!-- <p class="product-style">Emerald</p> -->
+          </div>
+
+          <div class="product-container">
+            <div class="product-comparison-container">
+              <input class="product-comparison-checkbox" type="checkbox" />
+              <p class="product-comparison-text">Choose to Compare</p>
+            </div>
+            <img
+              class="product-img"
+              src="./img/product-display/Kennedy Acetate-Matte Black-1.jpg"
+              alt="Kennedy Acetate"
+            />
+            <div class="product-color-container">
+              <img
+                class="product-color product-color-active"
+                src="./icon/color-Kennedy Acetate-Matte Black.png"
+                alt=""
+                color="Matte Black"
+              />
+              <img
+                class="product-color"
+                src="./icon/color-Kennedy Acetate-Tangerine.png"
+                alt=""
+                color="Tangerine"
+              />
+              <img
+                class="product-color"
+                src="./icon/color-Kennedy Acetate-Matte Havana.png"
+                alt=""
+                color="Matte Havana"
+              />
+            </div>
+            <p class="product-quick-view-button" pid="1003">→ Quick View ←</p>
+            <div class="product-detail-container">
+              <!-- <p class="product-name">Kennedy Acetate</p>
+              <p class="product-price">$149</p> -->
+            </div>
+            <!-- <p class="product-style">Matte Black</p> -->
+          </div>
+        </div>
+      </section>
+
+      <section class="product-quick-view">
+        <button class="product-quick-view-close-button">&#10005;</button>
+        <div class="quick-view-left">
+          <p class="quick-view-product-name">product name</p>
+          <div class="slideshow-container">
+            <div class="mySlides">
+              <img
+                class="slideImg"
+                src="./img/product-display/Canby ACTV-Emerald-1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="mySlides">
+              <img
+                class="slideImg"
+                src="./img/product-display/Canby ACTV-Emerald-2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="mySlides">
+              <img
+                class="slideImg"
+                src="./img/product-display/Canby ACTV-Emerald-3.jpg"
+                alt=""
+              />
+            </div>
+
+            <div class="mySlides">
+              <img
+                class="slideImg"
+                src="./img/product-display/Canby ACTV-Emerald-4.jpg"
+                alt=""
+              />
+            </div>
+            <div class="mySlides">
+              <img
+                class="slideImg"
+                src="./img/product-display/Canby ACTV-Emerald-5.jpg"
+                alt=""
+              />
+            </div>
+            <div class="mySlides">
+              <img
+                class="slideImg"
+                src="./img/product-display/Canby ACTV-Emerald-6.jpg"
+                alt=""
+              />
+            </div>
+            <div class="mySlides">
+              <img
+                class="slideImg"
+                src="./img/product-display/Canby ACTV-Emerald-7.jpg"
+                alt=""
+              />
+            </div>
+            <div class="mySlides">
+              <img
+                class="slideImg"
+                src="./img/product-display/Canby ACTV-Emerald-8.jpg"
+                alt=""
+              />
+            </div>
+
+            <div class="arrow next">&#10095;</div>
+            <div class="arrow previous">&#10094;</div>
+
+            <div class="slidesDots"></div>
+          </div>
+          <div class="quick-view-color-container">color</div>
+          <p>Material：</p>
+          <div class="quick-view-material-container">
+            <div class="quick-view-material-inner-container">
+              <img src="" alt="" />1
+              <p>W</p>
+            </div>
+            <div class="quick-view-material-inner-container">
+              <img src="" alt="" />2
+              <p>M</p>
+            </div>
+            <div class="quick-view-material-inner-container">
+              <img src="" alt="" />3
+              <p>A</p>
+            </div>
+          </div>
+        </div>
+        <div class="quick-view-right">
+          <div class="quick-view-detail-container">
+            <div class="quick-view-title-container">
+              <p class="quick-view-title quick-view-title-active">
+                Description
+              </p>
+              <p class="quick-view-title">Features</p>
+            </div>
+            <div class="quick-view-detail-wapper">
+              <div class="quick-view-detail quick-view-description">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
+                distinctio voluptatum quam adipisci unde ex facere culpa fuga,
+                pariatur, cumque maxime harum reiciendis doloremque molestias ab
+                est obcaecati illum deleniti nisi eos tempora? Doloribus
+                veritatis modi minus fuga corrupti, odit, natus similique
+                accusantium eos ipsa blanditiis sunt animi consequatur
+                perferendis.
+              </div>
+              <div class="quick-view-detail quick-view-features hidden">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Placeat, quibusdam.
+              </div>
+            </div>
+
+            <div class="quick-view-more-details-button-container">
+              <a class="quick-view-more-details-button" href="">More Details</a>
+            </div>
+            <div class="quick-view-price-review-container">
+              <p>$199</p>
+              <div class="quick-view-review-container">
+                <img src="./icon/review-star.png" alt="" />
+                <p>4.6</p>
+                <p>(123 review)</p>
+              </div>
+            </div>
+            <div class="quick-view-selector-container">
+              <div class="quick-view-color-selector-container">
+                <img src="" alt="" />color
+                <button>↓</button>
+              </div>
+              <div class="quick-view-number-container">
+                <button class="quick-view-number-calculator">-</button>
+                <p class="quick-view-number">Num</p>
+                <button class="quick-view-number-calculator">+</button>
+              </div>
+              <button class="quick-view-cart-button">Add to Cart</button>
+              <a class="shopping-cart-button"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart"
+                >
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path
+                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cart START -->
+      <div class="cart">
+        <button class="cart-close-button">&#10005;</button>
+        <h1>Shopping Cart</h1>
+        <table class="cart-table">
+          <th>Name</th>
+          <th>Pirce</th>
+          <th>Amout</th>
+          <tbody></tbody>
+        </table>
+
+        <button class="clear-cart-button">Clear Cart</button>
+      </div>
+
+      <!-- Img section-2 START -->
+      <section class="img-section-second">
+        <p>CAMP</p>
+        <h1>National Parks Collection</h1>
+        <a class="img-section-second-exlpore-button" href="">Explpore More</a>
+      </section>
+
+      <!-- Footer START -->
+      <footer class="">
+        <div class="footer-top-container">
+          <div class="footer-icon-container">
+            <div class="footer-review-star-container">
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+              <img
+                class="footer-review-star"
+                src="./icon/review-star.png"
+                alt=""
+              />
+            </div>
+            <a href="">Read Review</a>
+          </div>
+          <div class="footer-icon-container">
+            <img
+              class="footer-icon"
+              id="footer-shipping-icon"
+              src="./icon/footer-img-shipping.png"
+              alt=""
+            />
+            <a href="">Free Shipping</a>
+          </div>
+          <div class="footer-icon-container">
+            <img
+              class="footer-icon"
+              src="./icon/footer-img-return.png"
+              alt=""
+            />
+            <a href="">Free Returns</a>
+          </div>
+          <div class="footer-icon-container">
+            <img
+              class="footer-icon"
+              src="./icon/footer-img-retails.png"
+              alt=""
+            />
+            <a href="">Retailers Near You</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom-container">
+          <div class="footer-text-big-container">
+            <h3>Stay In Touch</h3>
+            <p>
+              Sign up for our newsletter to receive 10% off your first purchase
+            </p>
+            <form>
+              <input
+                class="footer-input"
+                placeholder="Your email"
+                type="email"
+                required
+              />
+              <button type="submit" class="footer-email-button">Join</button>
+            </form>
+          </div>
+
+          <div class="footer-text-container">
+            <p>ABOUT</p>
+            <ul>
+              <li>Our Story</li>
+              <li>Our Process</li>
+              <li>Time Well Spent</li>
+            </ul>
+          </div>
+          <div class="footer-text-container">
+            <p>SUPPORT</p>
+            <ul>
+              <li>My Account</li>
+              <li>Track My Order</li>
+              <li>Returns</li>
+              <li>Warranty</li>
+              <li>FAQ/Help</li>
+              <li>Wholesale</li>
+              <li>Affiliate Program</li>
+              <li>Military & First Responders</li>
+            </ul>
+          </div>
+          <div class="footer-text-container">
+            <p>CONNECT</p>
+            <ul>
+              <li>Instagram</li>
+              <li>Facebook</li>
+              <li>Vimeo</li>
+              <li>Pinterest</li>
+            </ul>
+          </div>
+          <div class="footer-text-container">
+            <p>CONTACT</p>
+            <ul>
+              <li>Customer Service:</li>
+              <li>(503) 367-9252 9–3 PST, Mon–Fri</li>
+              <li>729 SE Grant St Portland OR 97214</li>
+              <li>info@shwoodshop.com</li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-copyright">
+          © 2024 SHWOOD EYEWEAR | TERMS | PRIVACY POLICY | ACCESSIBILITY | DO
+          NOT SELL MY PERSONAL INFORMATION
+        </p>
+      </footer>
+    </main>
+  </body>
+
+  <!-- Please use external JS, ./js/main.js -->
+
+  <script src="./js/main.js"></script>
+  <script src="./js/searchbtn.js"></script>
+  <script src="./js/func.js"></script>
+</html>
