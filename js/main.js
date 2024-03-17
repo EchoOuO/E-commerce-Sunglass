@@ -452,7 +452,7 @@ function dotHandler(idx) {
 // Quick view modal box
 
 // init
-function quickViewInit() {}
+function quickViewInit() { }
 
 quickViewInit();
 
@@ -572,7 +572,7 @@ const clearCart = () => {
   console.log(purchasedList);
   $("tr").remove();
 };
-//change picture
+
 
 // Change products item
 const productsJsonPath = 'js/data.json';
@@ -600,9 +600,6 @@ $(document).ready(function () {
       $('.quick-view-product-name').text(product.Name);
       $('.quick-view-price').text(product.Price);
       $('.quick-view-description').text(product.Description);
-      // Assume "Img" in your JSON is the main image
-
-      // $('.slideImg').attr('src','product.Img');
       $('.quick-view-features').html(`<ul>${product.Features.map(f => `<li>${f}</li>`).join('')}</ul>`);
       $('.quick-view-review').text(product.Review);
       $('.reviewN').text(product.ReviewN);
@@ -635,18 +632,18 @@ $(document).ready(function () {
 // $('.quick-view-cart-button').attr('href', yourCartUrl);
 
 
-function openQuickView() {
-  $('.product-quick-view').fadeIn(); // Use jQuery's fadeIn effect to show the Quick View modal
-}
+// function openQuickView() {
+//   $('.product-quick-view').fadeIn(); // Use jQuery's fadeIn effect to show the Quick View modal
+// }
 
-// Close Quick View Modal
-$('.product-quick-view-close-button').click(function () {
-  $('.product-quick-view').fadeOut(); // Use jQuery's fadeOut effect to hide the Quick View modal
-});
+// // Close Quick View Modal
+// $('.product-quick-view-close-button').click(function () {
+//   $('.product-quick-view').fadeOut(); // Use jQuery's fadeOut effect to hide the Quick View modal
+// });
 
-// Optional: Close Quick View Modal on pressing ESC key
-$(document).on('keydown', function (e) {
-  if (e.key === "Escape") { // ESC key
-    $('.product-quick-view').fadeOut();
-  }
-});
+// // Optional: Close Quick View Modal on pressing ESC key
+// $(document).on('keydown', function (e) {
+//   if (e.key === "Escape") { // ESC key
+//     $('.product-quick-view').fadeOut();
+//   }
+// });

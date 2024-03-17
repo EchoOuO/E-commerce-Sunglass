@@ -1,109 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style/main.css" />
-    <link rel="stylesheet" href="./style/nav.css" />
-    <link rel="stylesheet" href="./style/footer.css" />
-    <link rel="stylesheet" href="./style/cart.css" />
-    <!-- Font family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
-      integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-  </head>
+<!-- CSS -->
+<link rel="stylesheet" href="./style/main.css" />
+<link rel="stylesheet" href="./style/nav.css" />
+<link rel="stylesheet" href="./style/footer.css" />
+<link rel="stylesheet" href="./style/cart.css" />
+<!-- Font family -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+  integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
 
-  <!-- Font family -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
-    rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
-    integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Font family -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+  rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+  integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <!-- 1. Please divide codes by -->
 <!-- "section name" START -->
 
-  <body>
-    <main>
-      <!-- Navigation Bar START -->
-      <section>
-        <nav class="nav-bar">
-          <div class="nav-bar-div-left">
-            <a href="./main.html"><img src="./icon/logo.png" alt="Logo" id="nav-bar-logo" /></a>
-            <img src="./icon/arrow-right.png" alt="" id="nav-arrow-right" />
-          </div>
-          <div class="nav-bar-div-mid">
-            <ul class="nav-bar-ul">
-              <li><a href="https://shwoodshop.com/collections/mens-sunglasses">MEN</a></li>
-              <li><a href="https://shwoodshop.com/collections/womens-sunglasses">WOMEN</a></li>
-              <li><a href="">COLLECTIONS</a></li>
-              <li><a href="">EXPLORE</a></li>
-            </ul>
-          </div>
-          <div class="nav-bar-div-right">
-            <div class="icons-group">
-              <input type="text" id="search-input" style="display: none; width: 120px" />
-              <div id="search-results" style="display: none">
-                <!-- New results container -->
-                <ul id="results"></ul>
-              </div>
-              <a href="#" id="search-btn"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-search"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" /></svg
-              ></a>
-              <!-- ... -->
-              <a class="shopping-cart-button"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-shopping-cart"
-              >
+<body>
+  <main>
+    <!-- Navigation Bar START -->
+    <section>
+      <nav class="nav-bar">
+        <div class="nav-bar-div-left">
+          <a href="./main.html"><img src="./icon/logo.png" alt="Logo" id="nav-bar-logo" /></a>
+          <img src="./icon/arrow-right.png" alt="" id="nav-arrow-right" />
+        </div>
+        <div class="nav-bar-div-mid">
+          <ul class="nav-bar-ul">
+            <li><a href="https://shwoodshop.com/collections/mens-sunglasses">MEN</a></li>
+            <li><a href="https://shwoodshop.com/collections/womens-sunglasses">WOMEN</a></li>
+            <li><a href="">COLLECTIONS</a></li>
+            <li><a href="">EXPLORE</a></li>
+          </ul>
+        </div>
+        <div class="nav-bar-div-right">
+          <div class="icons-group">
+            <input type="text" id="search-input" style="display: none; width: 120px" />
+            <div id="search-results" style="display: none">
+              <!-- New results container -->
+              <ul id="results"></ul>
+            </div>
+            <a href="#" id="search-btn"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-search">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg></a>
+            <!-- ... -->
+            <a class="shopping-cart-button"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-shopping-cart">
                 <circle cx="8" cy="21" r="1" />
                 <circle cx="19" cy="21" r="1" />
-                <path
-                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
-                /></svg
-            ></a>
-            </div>
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg></a>
           </div>
-        </nav>
-        <div class="icons-group">
-          <input type="text" id="search-input" style="display: none" />
-          <div id="results"></div>
         </div>
+      </nav>
+      <div class="icons-group">
+        <input type="text" id="search-input" style="display: none" />
+        <div id="results"></div>
+      </div>
 
-        <!-- <nav class="nav-bar">
+      <!-- <nav class="nav-bar">
           <div class="nav-bar-div-left">
             <a href="http://127.0.0.1:5501/main.html"
               ><img src="./icon/logo.png" alt="Logo" id="nav-bar-logo"
@@ -194,11 +168,7 @@
           <div class="header-text-container">
             <p>SHWOOD X IRON & RESIN</p>
             <h1>The Kennedy Riding Glasses</h1>
-            <a
-              href="https://shwoodshop.com/collections/shwood-x-iron-resin"
-              target="_blank"
-              >Shop The Collection</a
-            >
+            <a href="https://shwoodshop.com/collections/shwood-x-iron-resin" target="_blank">Shop The Collection</a>
           </div>
         </div>
       </section>
@@ -276,9 +246,7 @@
               experiment is what fuels our passion and transforms our work int a
               lobor of love
             </p>
-            <a class="img-section-explore-button" href=""
-              >Explore Our Process</a
-            >
+            <a class="img-section-explore-button" href="">Explore Our Process</a>
           </div>
         </div>
       </section>
@@ -435,19 +403,16 @@
             <tr>
               <td></td>
               <td>
-                <a class="table-cart-anchor" href="" target="_blank"
-                  ><button class="table-cart-button">Choose Me</button></a
-                >
+                <a class="table-cart-anchor" href="" target="_blank"><button class="table-cart-button">Choose
+                    Me</button></a>
               </td>
               <td>
-                <a class="table-cart-anchor" href="" target="_blank"
-                  ><button class="table-cart-button">Choose Me</button></a
-                >
+                <a class="table-cart-anchor" href="" target="_blank"><button class="table-cart-button">Choose
+                    Me</button></a>
               </td>
               <td>
-                <a class="table-cart-anchor" href="" target="_blank"
-                  ><button class="table-cart-button">Choose Me</button></a
-                >
+                <a class="table-cart-anchor" href="" target="_blank"><button class="table-cart-button">Choose
+                    Me</button></a>
               </td>
             </tr>
           </table>
@@ -460,12 +425,8 @@
           <h2 class="product-title">Shop Best Sellers</h2>
           <div class="product-button-container">
             <button class="product-compare-button">Compare Product</button>
-            <a
-              class="product-shop-button"
-              href="https://shwoodshop.com/collections/best-selling-sunglasses-all"
-              target="_blank"
-              >Shop All</a
-            >
+            <a class="product-shop-button" href="https://shwoodshop.com/collections/best-selling-sunglasses-all"
+              target="_blank">Shop All</a>
           </div>
         </div>
         <div class="product-all">
@@ -475,30 +436,14 @@
               <p class="product-comparison-text">Choose to Compare</p>
             </div>
 
-            <img
-              class="product-img"
-              src="./img/product-display/Hawthorne Acetate-Black Chrome-1.jpg"
-              alt="Hawthorne Acetate"
-            />
+            <img class="product-img" src="./img/product-display/Hawthorne Acetate-Black Chrome-1.jpg"
+              alt="Hawthorne Acetate" />
             <div class="product-color-container">
-              <img
-                class="product-color product-color-active"
-                src="./icon/color-Hawthorne Acetate-Black Chrome.png"
-                alt=""
-                color="Black Chrome"
-              />
-              <img
-                class="product-color"
-                src="./icon/color-Hawthorne Acetate-Tortoise.png"
-                alt=""
-                color="Tortoise"
-              />
-              <img
-                class="product-color"
-                src="./icon/color-Hawthorne Acetate-Blue Coral.png"
-                alt=""
-                color="Blue Coral"
-              />
+              <img class="product-color product-color-active" src="./icon/color-Hawthorne Acetate-Black Chrome.png"
+                alt="" color="Black Chrome" />
+              <img class="product-color" src="./icon/color-Hawthorne Acetate-Tortoise.png" alt="" color="Tortoise" />
+              <img class="product-color" src="./icon/color-Hawthorne Acetate-Blue Coral.png" alt=""
+                color="Blue Coral" />
             </div>
             <p class="product-quick-view-button" pid="1001">→ Quick View ←</p>
             <div class="product-detail-container">
@@ -513,30 +458,12 @@
               <input class="product-comparison-checkbox" type="checkbox" />
               <p class="product-comparison-text">Choose to Compare</p>
             </div>
-            <img
-              class="product-img"
-              src="./img/product-display/Canby ACTV-Emerald-1.jpg"
-              alt="Canby ACTV"
-            />
+            <img class="product-img" src="./img/product-display/Canby ACTV-Emerald-1.jpg" alt="Canby ACTV" />
             <div class="product-color-container">
-              <img
-                class="product-color product-color-active"
-                src="./icon/color-Canby ACTV-Emerald.png"
-                alt=""
-                color="Emerald"
-              />
-              <img
-                class="product-color"
-                src="./icon/color-Canby ACTV-Matte Apricot.png"
-                alt=""
-                color="Matte Apricot"
-              />
-              <img
-                class="product-color"
-                src="./icon/color-Canby ACTV-Oak Moss.png"
-                alt=""
-                color="Oak Moss"
-              />
+              <img class="product-color product-color-active" src="./icon/color-Canby ACTV-Emerald.png" alt=""
+                color="Emerald" />
+              <img class="product-color" src="./icon/color-Canby ACTV-Matte Apricot.png" alt="" color="Matte Apricot" />
+              <img class="product-color" src="./icon/color-Canby ACTV-Oak Moss.png" alt="" color="Oak Moss" />
             </div>
             <p class="product-quick-view-button" pid="1002">→ Quick View ←</p>
             <div class="product-detail-container">
@@ -551,30 +478,14 @@
               <input class="product-comparison-checkbox" type="checkbox" />
               <p class="product-comparison-text">Choose to Compare</p>
             </div>
-            <img
-              class="product-img"
-              src="./img/product-display/Kennedy Acetate-Matte Black-1.jpg"
-              alt="Kennedy Acetate"
-            />
+            <img class="product-img" src="./img/product-display/Kennedy Acetate-Matte Black-1.jpg"
+              alt="Kennedy Acetate" />
             <div class="product-color-container">
-              <img
-                class="product-color product-color-active"
-                src="./icon/color-Kennedy Acetate-Matte Black.png"
-                alt=""
-                color="Matte Black"
-              />
-              <img
-                class="product-color"
-                src="./icon/color-Kennedy Acetate-Tangerine.png"
-                alt=""
-                color="Tangerine"
-              />
-              <img
-                class="product-color"
-                src="./icon/color-Kennedy Acetate-Matte Havana.png"
-                alt=""
-                color="Matte Havana"
-              />
+              <img class="product-color product-color-active" src="./icon/color-Kennedy Acetate-Matte Black.png" alt=""
+                color="Matte Black" />
+              <img class="product-color" src="./icon/color-Kennedy Acetate-Tangerine.png" alt="" color="Tangerine" />
+              <img class="product-color" src="./icon/color-Kennedy Acetate-Matte Havana.png" alt=""
+                color="Matte Havana" />
             </div>
             <p class="product-quick-view-button" pid="1003">→ Quick View ←</p>
             <div class="product-detail-container">
@@ -592,61 +503,29 @@
           <p class="quick-view-product-name">product name</p>
           <div class="slideshow-container">
             <div class="mySlides">
-              <img
-                class="slideImg"
-                src="./img/product-display/Canby ACTV-Emerald-1.jpg"
-                alt=""
-              />
+              <img class="slideImg" src="./img/product-display/Canby ACTV-Emerald-1.jpg" alt="" />
             </div>
             <div class="mySlides">
-              <img
-                class="slideImg"
-                src="./img/product-display/Canby ACTV-Emerald-2.jpg"
-                alt=""
-              />
+              <img class="slideImg" src="./img/product-display/Canby ACTV-Emerald-2.jpg" alt="" />
             </div>
             <div class="mySlides">
-              <img
-                class="slideImg"
-                src="./img/product-display/Canby ACTV-Emerald-3.jpg"
-                alt=""
-              />
+              <img class="slideImg" src="./img/product-display/Canby ACTV-Emerald-3.jpg" alt="" />
             </div>
 
             <div class="mySlides">
-              <img
-                class="slideImg"
-                src="./img/product-display/Canby ACTV-Emerald-4.jpg"
-                alt=""
-              />
+              <img class="slideImg" src="./img/product-display/Canby ACTV-Emerald-4.jpg" alt="" />
             </div>
             <div class="mySlides">
-              <img
-                class="slideImg"
-                src="./img/product-display/Canby ACTV-Emerald-5.jpg"
-                alt=""
-              />
+              <img class="slideImg" src="./img/product-display/Canby ACTV-Emerald-5.jpg" alt="" />
             </div>
             <div class="mySlides">
-              <img
-                class="slideImg"
-                src="./img/product-display/Canby ACTV-Emerald-6.jpg"
-                alt=""
-              />
+              <img class="slideImg" src="./img/product-display/Canby ACTV-Emerald-6.jpg" alt="" />
             </div>
             <div class="mySlides">
-              <img
-                class="slideImg"
-                src="./img/product-display/Canby ACTV-Emerald-7.jpg"
-                alt=""
-              />
+              <img class="slideImg" src="./img/product-display/Canby ACTV-Emerald-7.jpg" alt="" />
             </div>
             <div class="mySlides">
-              <img
-                class="slideImg"
-                src="./img/product-display/Canby ACTV-Emerald-8.jpg"
-                alt=""
-              />
+              <img class="slideImg" src="./img/product-display/Canby ACTV-Emerald-8.jpg" alt="" />
             </div>
 
             <div class="arrow next">&#10095;</div>
@@ -717,25 +596,13 @@
                 <button class="quick-view-number-calculator">+</button>
               </div>
               <button class="quick-view-cart-button">Add to Cart</button>
-              <a class="shopping-cart-button"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-shopping-cart"
-                >
+              <a class="shopping-cart-button"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-shopping-cart">
                   <circle cx="8" cy="21" r="1" />
                   <circle cx="19" cy="21" r="1" />
-                  <path
-                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
-                  /></svg
-              ></a>
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                </svg></a>
             </div>
           </div>
         </div>
@@ -767,57 +634,24 @@
         <div class="footer-top-container">
           <div class="footer-icon-container">
             <div class="footer-review-star-container">
-              <img
-                class="footer-review-star"
-                src="./icon/review-star.png"
-                alt=""
-              />
-              <img
-                class="footer-review-star"
-                src="./icon/review-star.png"
-                alt=""
-              />
-              <img
-                class="footer-review-star"
-                src="./icon/review-star.png"
-                alt=""
-              />
-              <img
-                class="footer-review-star"
-                src="./icon/review-star.png"
-                alt=""
-              />
-              <img
-                class="footer-review-star"
-                src="./icon/review-star.png"
-                alt=""
-              />
+              <img class="footer-review-star" src="./icon/review-star.png" alt="" />
+              <img class="footer-review-star" src="./icon/review-star.png" alt="" />
+              <img class="footer-review-star" src="./icon/review-star.png" alt="" />
+              <img class="footer-review-star" src="./icon/review-star.png" alt="" />
+              <img class="footer-review-star" src="./icon/review-star.png" alt="" />
             </div>
             <a href="">Read Review</a>
           </div>
           <div class="footer-icon-container">
-            <img
-              class="footer-icon"
-              id="footer-shipping-icon"
-              src="./icon/footer-img-shipping.png"
-              alt=""
-            />
+            <img class="footer-icon" id="footer-shipping-icon" src="./icon/footer-img-shipping.png" alt="" />
             <a href="">Free Shipping</a>
           </div>
           <div class="footer-icon-container">
-            <img
-              class="footer-icon"
-              src="./icon/footer-img-return.png"
-              alt=""
-            />
+            <img class="footer-icon" src="./icon/footer-img-return.png" alt="" />
             <a href="">Free Returns</a>
           </div>
           <div class="footer-icon-container">
-            <img
-              class="footer-icon"
-              src="./icon/footer-img-retails.png"
-              alt=""
-            />
+            <img class="footer-icon" src="./icon/footer-img-retails.png" alt="" />
             <a href="">Retailers Near You</a>
           </div>
         </div>
@@ -829,12 +663,7 @@
               Sign up for our newsletter to receive 10% off your first purchase
             </p>
             <form>
-              <input
-                class="footer-input"
-                placeholder="Your email"
-                type="email"
-                required
-              />
+              <input class="footer-input" placeholder="Your email" type="email" required />
               <button type="submit" class="footer-email-button">Join</button>
             </form>
           </div>
@@ -884,11 +713,12 @@
           NOT SELL MY PERSONAL INFORMATION
         </p>
       </footer>
-    </main>
-  </body>
+  </main>
+</body>
 
-  <!-- Please use external JS, ./js/main.js -->
+<!-- Please use external JS, ./js/main.js -->
 
-  <script src="./js/main.js"></script>
-  <script src="./js/searchbtn.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/searchbtn.js"></script>
+
 </html>
