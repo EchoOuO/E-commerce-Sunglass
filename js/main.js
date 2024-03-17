@@ -575,75 +575,145 @@ const clearCart = () => {
 
 
 // Change products item
-const productsJsonPath = 'js/data.json';
 
-$(document).ready(function () {
-  // Used to store loaded product data
-  let productsData = [];
-
-  // Load JSON data
-  $.getJSON(productsJsonPath, function (data) {
-    productsData = data; // Save data for later use
-  });
-
-  // Bind click event to Quick View buttons
-  $('.product-quick-view-button').click(function () {
-    // Get data-id
-    const productId = $(this).data('pid');
-
-
-    // Find the corresponding product in the product data
-    const product = productsData.find(p => p.pid === productId);
-
-    if (product) {
-      // Update modal content
-      $('.quick-view-product-name').text(product.Name);
-      $('.quick-view-price').text(product.Price);
-      $('.quick-view-description').text(product.Description);
-      $('.quick-view-features').html(`<ul>${product.Features.map(f => `<li>${f}</li>`).join('')}</ul>`);
-      $('.quick-view-review').text(product.Review);
-      $('.reviewN').text(product.ReviewN);
-      $('.quick-view-color-container').text(product.Color.join(', '));
-      $('.quick-view-material-container').text(product.Fmaterial.join(', '));
-      $('.mySlides img').attr('src', './img/product-display/WEBP.jpg');
-      $('.quick-view-more-details-button').attr('href', product.Url);
-
-      // Display the modal
-      $('.product-quick-view').slideDown(250).css('display', 'flex');
-    }
-
-  });
-
+// Add an event listener for each quick view button
+$(document).on('click', '.product-quick-view-button', function () {
+  // Assuming the "pid" attribute holds the product ID
+  const productId = $(this).attr('pid');
+  displayQuickView(productId);
 });
 
+// Function to display the quick view modal with product details
+function displayQuickView(productId) {
+  const product = productList.get(Number(productId));
+  if (product) {
+    // Update modal content
+    $('.quick-view-product-name').text(product.Name);
+    $('.quick-view-price').text('$' + product.Price);
+    $('.quick-view-description').text(product.Description);
+    $('.quick-view-features').html(`<ul>${product.Features.map(f => `<li>${f}</li>`).join('')}</ul>`);
+    $('.quick-view-review').text(product.Review);
+    $('.quick-view-reviewN').text('(' + product.ReviewN + 'review)');
+    $('.quick-view-color-container').text(product.Color.join(', '));
+    $('.quick-view-material-container').text(product.Fmaterial.join(', '));
 
 
-// // Update colors, materials, description, features, etc.
-// $('.quick-view-color-container').text(product.Color.join(', '));
-// $('.quick-view-material-container').text(product.Fmaterial.join(', '));
-// $('.quick-view-description').text(product.Description.join(' '));
-// $('.quick-view-features').html(product.Features.map(f => `< li > ${ f }</li > `).join(''));
-// $('.quick-view-price-review-container p').text(product.Price);
-// $('.quick-view-review-container img').attr('src', './icon/review-star.png');
-// $('.quick-view-review-container p').eq(1).text(product.Review);
-// $('.quick-view-review-container p').eq(2).text(`(${ product.ReviewN } reviews)`);
-// $('.quick-view-more-details-button').attr('href', product.Url);
-// // Update the URL for the "Add to Cart" button if needed
-// $('.quick-view-cart-button').attr('href', yourCartUrl);
+    // $('.mySlides img').attr('src', './img/product-display/WEBP.jpg');
+    $('.quick-view-number-calculator-minus').on('click', function() {
+      var count = parseInt($('.quick-view-number').text());
+      if (count > 1) {
+        $('.quick-view-number').text(count - 1);
+      }
+    });
+  
+    // Bind click event to plus button
+    $('.quick-view-number-calculator-plus').on('click', function() {
+      var count = parseInt($('.quick-view-number').text());
+      $('.quick-view-number').text(count + 1);
+    });
+  
 
 
-// function openQuickView() {
-//   $('.product-quick-view').fadeIn(); // Use jQuery's fadeIn effect to show the Quick View modal
-// }
 
-// // Close Quick View Modal
-// $('.product-quick-view-close-button').click(function () {
-//   $('.product-quick-view').fadeOut(); // Use jQuery's fadeOut effect to hide the Quick View modal
+    // Example for features, assuming you want to list them as bullet pointsㄎ
+    // const featuresList = product.Features.map(feature => `<li>${feature}</li>`).join('');ㄋ
+    // $('.quick-view-features').html(`<ul>${featuresList}</ul>`);
+    // // ... Populate colors, materials, etc.
+
+    // Show the quick view modals
+    $('.product-quick-view').slideDown(250).css('display', 'flex');
+  }
+}
+
+
+//       $('.quick-view-color-container').text(product.Color.join(', '));
+//       $('.quick-view-material-container').text(product.Fmaterial.join(', '));
+//       $('.mySlides img').attr('src', './img/product-display/WEBP.jpg');
+//       $('.quick-view-more-details-button').attr('href', product.Url);
+
+// You may want to call this function to initially bind the click event after the productList is populated
+function bindQuickViewButtons() {
+  $('.product-quick-view-button').each(function () {
+    const pid = $(this).data('pid');
+    $(this).on('click', function () {
+      displayQuickView(pid);
+    });
+  });
+}
+
+// After the productList Map is populated, call bindQuickViewButtons
+// bindQuickViewButtons(); // Uncomment this line once productList is ready
+
+
+// const productsJsonPath = 'js/data.json';
+
+// $(document).ready(function () {
+//   // Used to store loaded product data
+//   let productsData = [];
+
+//   // Load JSON data
+//   $.getJSON(productsJsonPath, function (data) {
+//     productsData = data; // Save data for later use
+//   });
+
+//   // Bind click event to Quick View buttons
+//   $('.product-quick-view-button').click(function () {
+//     // Get data-id
+//     const productId = $(this).data('pid');
+
+
+//     // Find the corresponding product in the product data
+//     const product = productsData.find(p => p.pid === productId);
+
+//     if (product) {
+//       // Update modal content
+//       $('.quick-view-product-name').text(product.Name);
+//       $('.quick-view-price').text(product.Price);
+//       $('.quick-view-description').text(product.Description);
+//       $('.quick-view-features').html(`<ul>${product.Features.map(f => `<li>${f}</li>`).join('')}</ul>`);
+//       $('.quick-view-review').text(product.Review);
+//       $('.reviewN').text(product.ReviewN);
+//       $('.quick-view-color-container').text(product.Color.join(', '));
+//       $('.quick-view-material-container').text(product.Fmaterial.join(', '));
+//       $('.mySlides img').attr('src', './img/product-display/WEBP.jpg');
+//       $('.quick-view-more-details-button').attr('href', product.Url);
+
+//       // Display the modal
+//       $('.product-quick-view').slideDown(250).css('display', 'flex');
+//     }
+
+//   });
+
 // });
 
-// // Optional: Close Quick View Modal on pressing ESC key
-// $(document).on('keydown', function (e) {
-//   if (e.key === "Escape") { // ESC key
-//     $('.product-quick-view').fadeOut();
-//   }
-// });
+
+
+// // // Update colors, materials, description, features, etc.
+// // $('.quick-view-color-container').text(product.Color.join(', '));
+// // $('.quick-view-material-container').text(product.Fmaterial.join(', '));
+// // $('.quick-view-description').text(product.Description.join(' '));
+// // $('.quick-view-features').html(product.Features.map(f => `< li > ${ f }</li > `).join(''));
+// // $('.quick-view-price-review-container p').text(product.Price);
+// // $('.quick-view-review-container img').attr('src', './icon/review-star.png');
+// // $('.quick-view-review-container p').eq(1).text(product.Review);
+// // $('.quick-view-review-container p').eq(2).text(`(${ product.ReviewN } reviews)`);
+// // $('.quick-view-more-details-button').attr('href', product.Url);
+// // // Update the URL for the "Add to Cart" button if needed
+// // $('.quick-view-cart-button').attr('href', yourCartUrl);
+
+
+// // function openQuickView() {
+// //   $('.product-quick-view').fadeIn(); // Use jQuery's fadeIn effect to show the Quick View modal
+// // }
+
+// // // Close Quick View Modal
+// // $('.product-quick-view-close-button').click(function () {
+// //   $('.product-quick-view').fadeOut(); // Use jQuery's fadeOut effect to hide the Quick View modal
+// // });
+
+// // // Optional: Close Quick View Modal on pressing ESC key
+// // $(document).on('keydown', function (e) {
+// //   if (e.key === "Escape") { // ESC key
+// //     $('.product-quick-view').fadeOut();
+// //   }
+// // });
